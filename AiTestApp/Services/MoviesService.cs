@@ -4,24 +4,34 @@ using AiTestApp.Repositories;
 
 namespace AiTestApp.Services;
 
+#region | Interface |
+
+/// <summary>
+/// Interface for a service that manages movie operations.
+/// </summary>
+public interface IMoviesService
+{
+    /// <summary>
+    /// Retrieves a random movie view model, optionally excluding a specific movie title.
+    /// </summary>
+    /// <param name="lastTitle">The title of the last movie shown, to be excluded from the random selection.</param>
+    /// <returns>A randomly selected movie view model.</returns>
+    MovieViewModel GetRandomMovie(string? lastTitle = null);
+}
+
+#endregion
+
 /// <summary>
 /// Service that manages movie operations.
 /// </summary>
-public class MoviesService : IMoviesService
+/// <param name="moviesRepository">The repository for movie data.</param>
+/// <param name="movieModelBuilder">The builder for movie view models.</param>
+public class MoviesService(IMoviesRepository moviesRepository, IMovieModelBuilder movieModelBuilder) : IMoviesService
 {
-    private readonly IMoviesRepository _moviesRepository;
-    private readonly IMovieModelBuilder _movieModelBuilder;
-
-    public MoviesService(IMoviesRepository moviesRepository, IMovieModelBuilder movieModelBuilder)
-    {
-        _moviesRepository = moviesRepository;
-        _movieModelBuilder = movieModelBuilder;
-    }
-
     /// <inheritdoc />
     public MovieViewModel GetRandomMovie(string? lastTitle = null)
     {
-        var movies = _moviesRepository.GetAllMovies().ToList();
+        var movies = moviesRepository.GetAllMovies().ToList();
         var random = new Random();
         var pool = string.IsNullOrWhiteSpace(lastTitle)
             ? movies
@@ -34,6 +44,6 @@ public class MoviesService : IMoviesService
         }
 
         var movie = pool[random.Next(pool.Count)];
-        return _movieModelBuilder.Build(movie);
+        return movieModelBuilder.Build(movie);
     }
 }

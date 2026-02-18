@@ -15,10 +15,7 @@ public class HomeController(IMoviesService moviesService) : Controller
     /// Displays the home page.
     /// </summary>
     /// <returns>The index view.</returns>
-    public IActionResult Index()
-    {
-        return View();
-    }
+    public IActionResult Index() => View();
 
     /// <summary>
     /// Displays a page with a randomly selected movie.
@@ -40,18 +37,12 @@ public class HomeController(IMoviesService moviesService) : Controller
     /// Displays the privacy policy page.
     /// </summary>
     /// <returns>The privacy view.</returns>
-    public IActionResult Privacy()
-    {
-        return View();
-    }
+    public IActionResult Privacy() => View();
 
     /// <summary>
     /// Displays the error page with diagnostic information.
     /// </summary>
     /// <returns>The error view populated with <see cref="ErrorViewModel"/>.</returns>
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-    }
+    public IActionResult Error() => View(new ErrorViewModel(Activity.Current?.Id ?? HttpContext.TraceIdentifier));
 }

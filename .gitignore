@@ -22,13 +22,6 @@ artifacts/
 *.snupkg
 .nuget/
 packages/
-# Except build output packages directory inside obj/bin shouldn't be ignored
-!AiTestApp/**/bin/
-!AiTestApp/**/obj/
-!AiTestApp.Web/**/bin/
-!AiTestApp.Web/**/obj/
-!AiTestApp.Repositories/**/bin/
-!AiTestApp.Repositories/**/obj/
 
 # Resharper
 _ReSharper*/
