@@ -1,0 +1,37 @@
+@model MovieViewModel
+@{
+    ViewData["Title"] = "Your Random Movie";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-10 col-lg-8">
+        <div class="card border-0 shadow-lg mb-4">
+            <div class="row g-0">
+                <div class="col-md-4 text-center p-3 bg-dark-muted rounded-start">
+                    @if (!string.IsNullOrWhiteSpace(Model.PosterUrl))
+                    {
+                        <img src="@Model.PosterUrl" alt="@Model.Title poster" class="img-fluid shadow" style="max-height: 420px; object-fit: cover;" />
+                    }
+                    else
+                    {
+                        <div class="d-flex align-items-center justify-content-center bg-dark rounded" style="height: 420px;">
+                            <span class="text-muted">No Poster Available</span>
+                        </div>
+                    }
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h2 class="card-title">@Model.Title (@Model.Year)</h2>
+                        <p class="text-muted mb-2">@Model.Genre</p>
+                        <p class="card-text">@Model.Description</p>
+
+                        <div class="mt-4 d-flex gap-2">
+                            <a class="btn btn-primary" asp-controller="Home" asp-action="Movie">Pick Another Random Movie</a>
+                            <a class="btn btn-outline-secondary" asp-controller="Home" asp-action="Index">Back to Generator</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

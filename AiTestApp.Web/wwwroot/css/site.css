@@ -1,0 +1,114 @@
+:root {
+  --primary-teal: #14b8a6;
+  --primary-teal-muted: #0d9488;
+  --bg-dark: #0f172a;
+  --bg-card: #1e293b;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --border-radius: 1rem;
+  --border-color: #334155;
+}
+
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Rounded corners for everything */
+.card, .btn, .form-control, .img-fluid, .rounded {
+  border-radius: var(--border-radius) !important;
+}
+
+/* Custom teal buttons */
+.btn-primary {
+  background-color: var(--primary-teal);
+  border-color: var(--primary-teal);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-teal-muted);
+  border-color: var(--primary-teal-muted);
+}
+
+.btn-outline-secondary {
+  color: var(--text-muted);
+  border-color: var(--border-color);
+}
+
+.btn-outline-secondary:hover {
+  background-color: var(--border-color);
+  color: var(--text-main);
+}
+
+/* Navbar overrides */
+.navbar {
+  background-color: var(--bg-card) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+.navbar-brand, .nav-link {
+  color: var(--text-main) !important;
+}
+
+.nav-link:hover {
+  color: var(--primary-teal) !important;
+}
+
+/* Card overrides */
+.card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+}
+
+.card-title {
+  color: var(--primary-teal);
+}
+
+.text-muted {
+  color: var(--text-muted) !important;
+}
+
+/* Custom utility */
+.bg-dark-muted {
+  background-color: var(--bg-dark) !important;
+}
+
+.border-top, .border-bottom {
+  border-color: var(--border-color) !important;
+}
+
+footer {
+  background-color: var(--bg-card);
+}
+
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+  color: var(--text-muted);
+  text-align: end;
+}
+
+.text-primary-teal {
+  color: var(--primary-teal) !important;
+}
+
+.border-color {
+  border-color: var(--border-color) !important;
+}

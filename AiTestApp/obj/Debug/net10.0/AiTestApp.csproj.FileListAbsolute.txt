@@ -1,0 +1,15 @@
+/home/keith/Development/AiTestApp/AiTestApp/bin/Debug/net10.0/AiTestApp.deps.json
+/home/keith/Development/AiTestApp/AiTestApp/bin/Debug/net10.0/AiTestApp.dll
+/home/keith/Development/AiTestApp/AiTestApp/bin/Debug/net10.0/AiTestApp.pdb
+/home/keith/Development/AiTestApp/AiTestApp/bin/Debug/net10.0/AiTestApp.Repositories.dll
+/home/keith/Development/AiTestApp/AiTestApp/bin/Debug/net10.0/AiTestApp.Repositories.pdb
+/home/keith/Development/AiTestApp/AiTestApp/obj/Debug/net10.0/AiTestApp.csproj.AssemblyReference.cache
+/home/keith/Development/AiTestApp/AiTestApp/obj/Debug/net10.0/AiTestApp.GeneratedMSBuildEditorConfig.editorconfig
+/home/keith/Development/AiTestApp/AiTestApp/obj/Debug/net10.0/AiTestApp.AssemblyInfoInputs.cache
+/home/keith/Development/AiTestApp/AiTestApp/obj/Debug/net10.0/AiTestApp.AssemblyInfo.cs
+/home/keith/Development/AiTestApp/AiTestApp/obj/Debug/net10.0/AiTestApp.csproj.CoreCompileInputs.cache
+/home/keith/Development/AiTestApp/AiTestApp/obj/Debug/net10.0/AiTestApp.csproj.Up2Date
+/home/keith/Development/AiTestApp/AiTestApp/obj/Debug/net10.0/AiTestApp.dll
+/home/keith/Development/AiTestApp/AiTestApp/obj/Debug/net10.0/refint/AiTestApp.dll
+/home/keith/Development/AiTestApp/AiTestApp/obj/Debug/net10.0/AiTestApp.pdb
+/home/keith/Development/AiTestApp/AiTestApp/obj/Debug/net10.0/ref/AiTestApp.dll

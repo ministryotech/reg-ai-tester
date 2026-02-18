@@ -1,0 +1,56 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "AiTestApp.Web/1.0.0": {
+        "dependencies": {
+          "AiTestApp": "1.0.0",
+          "AiTestApp.Repositories": "1.0.0"
+        },
+        "runtime": {
+          "AiTestApp.Web.dll": {}
+        }
+      },
+      "AiTestApp/1.0.0": {
+        "dependencies": {
+          "AiTestApp.Repositories": "1.0.0"
+        },
+        "runtime": {
+          "AiTestApp.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "AiTestApp.Repositories/1.0.0": {
+        "runtime": {
+          "AiTestApp.Repositories.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "AiTestApp.Web/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AiTestApp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AiTestApp.Repositories/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

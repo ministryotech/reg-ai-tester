@@ -1,0 +1,52 @@
+# .NET Core / ASP.NET Core
+bin/
+obj/
+
+# Visual Studio / Rider
+.vs/
+.idea/
+*.user
+*.suo
+*.userprefs
+
+# Build results
+[Bb]uild/
+[Bb]uilds/
+artifacts/
+
+# Logs
+*.log
+
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+# Except build output packages directory inside obj/bin shouldn't be ignored
+!AiTestApp/**/bin/
+!AiTestApp/**/obj/
+!AiTestApp.Web/**/bin/
+!AiTestApp.Web/**/obj/
+!AiTestApp.Repositories/**/bin/
+!AiTestApp.Repositories/**/obj/
+
+# Resharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+
+# Rider local workspace
+.idea/.idea.*
+
+# VS Code
+.vscode/
+
+# Generated static web assets
+**/obj/**/staticwebassets/
+**/obj/**/scopedcss/
+
+# Node modules (if any front-end packages are added later)
+**/node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
