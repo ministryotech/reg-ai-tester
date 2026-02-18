@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AiTestApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2865496c8a0b1bdac35454bcbe15be0d7e7c2798")]
 [assembly: System.Reflection.AssemblyProductAttribute("AiTestApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AiTestApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -101,3 +101,4 @@
 /home/keith/Development/AiTestApp/AiTestApp.Web/obj/Debug/net10.0/AiTestApp.Web.pdb
 /home/keith/Development/AiTestApp/AiTestApp.Web/obj/Debug/net10.0/AiTestApp.Web.genruntimeconfig.cache
 /home/keith/Development/AiTestApp/AiTestApp.Web/obj/Debug/net10.0/ref/AiTestApp.Web.dll
+/home/keith/Development/AiTestApp/AiTestApp.Web/obj/Debug/net10.0/AiTestApp.Web.sourcelink.json

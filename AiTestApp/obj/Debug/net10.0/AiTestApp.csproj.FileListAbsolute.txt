@@ -13,3 +13,4 @@
 /home/keith/Development/AiTestApp/AiTestApp/obj/Debug/net10.0/refint/AiTestApp.dll
 /home/keith/Development/AiTestApp/AiTestApp/obj/Debug/net10.0/AiTestApp.pdb
 /home/keith/Development/AiTestApp/AiTestApp/obj/Debug/net10.0/ref/AiTestApp.dll
+/home/keith/Development/AiTestApp/AiTestApp/obj/Debug/net10.0/AiTestApp.sourcelink.json

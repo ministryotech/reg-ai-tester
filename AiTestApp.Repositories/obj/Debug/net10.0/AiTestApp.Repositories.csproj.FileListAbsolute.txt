@@ -9,3 +9,4 @@
 /home/keith/Development/AiTestApp/AiTestApp.Repositories/obj/Debug/net10.0/refint/AiTestApp.Repositories.dll
 /home/keith/Development/AiTestApp/AiTestApp.Repositories/obj/Debug/net10.0/AiTestApp.Repositories.pdb
 /home/keith/Development/AiTestApp/AiTestApp.Repositories/obj/Debug/net10.0/ref/AiTestApp.Repositories.dll
+/home/keith/Development/AiTestApp/AiTestApp.Repositories/obj/Debug/net10.0/AiTestApp.Repositories.sourcelink.json

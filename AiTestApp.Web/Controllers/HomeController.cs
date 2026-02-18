@@ -2,7 +2,6 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using AiTestApp.Models;
 using AiTestApp.Services;
-using AiTestApp.ModelBuilders;
 
 namespace AiTestApp.Web.Controllers;
 
