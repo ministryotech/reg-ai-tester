@@ -2,7 +2,6 @@
 
     <ItemGroup>
       <ProjectReference Include="..\AiTestApp\AiTestApp.csproj" />
-      <ProjectReference Include="..\AiTestApp.Repositories\AiTestApp.Repositories.csproj" />
     </ItemGroup>
 
     <ItemGroup>
