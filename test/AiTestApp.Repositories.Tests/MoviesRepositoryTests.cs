@@ -5,13 +5,15 @@ namespace AiTestApp.Repositories.Tests;
 
 public class MoviesRepositoryTests
 {
-    private readonly MoviesRepository _sut = new();
+    private readonly MoviesRepository objUt = new();
+
+    #region | TESTS: GetAllMovies |
 
     [Fact]
     public void GetAllMovies_ShouldReturnNonEmptyListOfMovies()
     {
         // Act
-        var result = _sut.GetAllMovies();
+        var result = objUt.GetAllMovies();
 
         // Assert
         result.Should().NotBeNull();
@@ -23,7 +25,7 @@ public class MoviesRepositoryTests
     public void GetAllMovies_ShouldContainExpectedMovies()
     {
         // Act
-        var result = _sut.GetAllMovies().ToList();
+        var result = objUt.GetAllMovies().ToList();
 
         // Assert
         result.Should().Contain(m => m.Title == "Dune: Part Two");
@@ -32,4 +34,6 @@ public class MoviesRepositoryTests
         result.Should().Contain(m => m.Title == "The Beekeeper");
         result.Should().Contain(m => m.Title == "Gladiator II");
     }
+
+    #endregion
 }

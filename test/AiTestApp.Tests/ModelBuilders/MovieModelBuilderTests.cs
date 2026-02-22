@@ -6,7 +6,9 @@ namespace AiTestApp.Tests.ModelBuilders;
 
 public class MovieModelBuilderTests
 {
-    private readonly MovieModelBuilder _sut = new();
+    private readonly MovieModelBuilder objUt = new();
+
+    #region | TESTS: Build |
 
     [Fact]
     public void Build_ShouldMapAllPropertiesCorrectly()
@@ -15,7 +17,7 @@ public class MovieModelBuilderTests
         var movie = new Movie("Title", "Description", "Url", "Genre", 2024);
 
         // Act
-        var result = _sut.Build(movie);
+        var result = objUt.Build(movie);
 
         // Assert
         result.Title.Should().Be(movie.Title);
@@ -24,4 +26,6 @@ public class MovieModelBuilderTests
         result.Genre.Should().Be(movie.Genre);
         result.Year.Should().Be(movie.Year);
     }
+
+    #endregion
 }

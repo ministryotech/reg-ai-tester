@@ -10,70 +10,86 @@ namespace AiTestApp.Web.Tests.Controllers;
 
 public class HomeControllerTests
 {
-    private readonly IMoviesService _moviesService = Substitute.For<IMoviesService>();
-    private readonly HomeController _sut;
+    private readonly IMoviesService moviesService = Substitute.For<IMoviesService>();
+    private readonly HomeController objUt;
 
     public HomeControllerTests()
     {
-        _sut = new HomeController(_moviesService)
+        objUt = new HomeController(moviesService)
         {
             TempData = new TempDataDictionary(new DefaultHttpContext(), Substitute.For<ITempDataProvider>())
         };
     }
 
+    #region | TESTS: Index |
+
     [Fact]
     public void Index_ShouldReturnView()
     {
         // Act
-        var result = _sut.Index();
+        var result = objUt.Index();
 
         // Assert
         result.Should().BeOfType<ViewResult>();
     }
+
+    #endregion
+
+    #region | TESTS: Privacy |
 
     [Fact]
     public void Privacy_ShouldReturnView()
     {
         // Act
-        var result = _sut.Privacy();
+        var result = objUt.Privacy();
 
         // Assert
         result.Should().BeOfType<ViewResult>();
     }
+
+    #endregion
+
+    #region | TESTS: Movie |
 
     [Fact]
     public void Movie_ShouldReturnViewWithModelFromService()
     {
         // Arrange
         var viewModel = new MovieViewModel("Title", "D", "U", "G", 2024);
-        _moviesService.GetRandomMovie(Arg.Any<string>()).Returns(viewModel);
-        _sut.TempData["LastMovieTitle"] = "OldTitle";
+        moviesService.GetRandomMovie(Arg.Any<string>()).Returns(viewModel);
+        objUt.TempData["LastMovieTitle"] = "OldTitle";
 
         // Act
-        var result = _sut.Movie();
+        var result = objUt.Movie();
 
         // Assert
         var viewResult = result.Should().BeOfType<ViewResult>().Subject;
         viewResult.Model.Should().Be(viewModel);
-        _sut.TempData["LastMovieTitle"].Should().Be(viewModel.Title);
-        _moviesService.Received(1).GetRandomMovie("OldTitle");
+        objUt.TempData["LastMovieTitle"].Should().Be(viewModel.Title);
+        moviesService.Received(1).GetRandomMovie("OldTitle");
     }
+
+    #endregion
+
+    #region | TESTS: Error |
 
     [Fact]
     public void Error_ShouldReturnViewWithModel()
     {
         // Arrange
-        _sut.ControllerContext = new ControllerContext
+        objUt.ControllerContext = new ControllerContext
         {
             HttpContext = new DefaultHttpContext()
         };
 
         // Act
-        var result = _sut.Error();
+        var result = objUt.Error();
 
         // Assert
         var viewResult = result.Should().BeOfType<ViewResult>().Subject;
         var model = viewResult.Model.Should().BeOfType<ErrorViewModel>().Subject;
         model.RequestId.Should().NotBeNullOrEmpty();
     }
+
+    #endregion
 }
