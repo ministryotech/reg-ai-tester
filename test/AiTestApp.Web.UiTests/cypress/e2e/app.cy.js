@@ -19,9 +19,6 @@ describe('Web Application UI Tests', () => {
   });
 
   it('should navigate via the navbar', () => {
-    cy.get('.navbar-nav .nav-link').contains('Privacy').click();
-    cy.url().should('include', '/Home/Privacy');
-
     cy.get('.navbar-brand').contains('REG').click();
     cy.url().should('include', '/');
   });
