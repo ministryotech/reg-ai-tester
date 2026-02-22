@@ -26,9 +26,6 @@ public interface IMoviesRepository
 public class MoviesRepository(IMoviesJsonDataSourceRepository jsonDataSource) : IMoviesRepository
 {
     /// <inheritdoc />
-    public IEnumerable<Movie> GetAllMovies()
-    {
-        var rawJson = jsonDataSource.ReadRawJson();
-        return JsonSerializer.Deserialize<List<Movie>>(rawJson) ?? [];
-    }
+    public IEnumerable<Movie> GetAllMovies() =>
+        JsonSerializer.Deserialize<List<Movie>>(jsonDataSource.ReadRawJson()) ?? [];
 }
