@@ -22,7 +22,7 @@ describe('Web Application UI Tests', () => {
     cy.get('.navbar-nav .nav-link').contains('Privacy').click();
     cy.url().should('include', '/Home/Privacy');
 
-    cy.get('.navbar-nav .nav-link').contains('Home').click();
+    cy.get('.navbar-brand').contains('REG').click();
     cy.url().should('include', '/');
   });
 });
