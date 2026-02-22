@@ -1,4 +1,4 @@
-namespace AiTestApp.Repositories.Models;
+namespace AiTestApp.Repositories.Contracts;
 
 /// <summary>
 /// Represents a movie entity in the system.

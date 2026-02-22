@@ -1,5 +1,5 @@
 using AiTestApp.Repositories;
-using AiTestApp.Repositories.Models;
+using AiTestApp.Repositories.Contracts;
 
 // Create and configure the web application builder.
 var builder = WebApplication.CreateBuilder(args);

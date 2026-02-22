@@ -1,4 +1,4 @@
-using AiTestApp.Repositories.Models;
+using AiTestApp.Repositories.Contracts;
 
 namespace AiTestApp.Repositories;
 
