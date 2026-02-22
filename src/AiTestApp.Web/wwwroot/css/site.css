@@ -43,10 +43,11 @@ footer {
 
 footer a {
   color: var(--primary-teal) !important;
+  text-decoration: none !important;
 }
 
 footer a:hover {
-  color: var(--primary-teal-muted) !important;
+  color: var(--primary-teal) !important;
   text-decoration: underline !important;
 }
 
