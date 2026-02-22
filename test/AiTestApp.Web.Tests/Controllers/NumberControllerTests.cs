@@ -8,8 +8,10 @@ using NSubstitute;
 
 namespace AiTestApp.Web.Tests.Controllers;
 
-public sealed class HomeControllerTests
+public sealed class NumberControllerTests
 {
+    private readonly IDiceService diceService = Substitute.For<IDiceService>();
+
     #region | TESTS: Index |
 
     [Fact]
@@ -27,49 +29,30 @@ public sealed class HomeControllerTests
 
     #endregion
 
-    #region | TESTS: Privacy |
+    #region | TESTS: Roll |
 
     [Fact]
-    public void Privacy_ShouldReturnView()
+    public void Roll_ShouldReturnViewWithModel()
     {
         // Arrange
         var objUt = BuildObjUt();
+        var viewModel = new NumberViewModel("d20", 15);
+        diceService.Roll("d20").Returns(viewModel);
 
         // Act
-        var result = objUt.Privacy();
-
-        // Assert
-        result.Should().BeOfType<ViewResult>();
-    }
-
-    #endregion
-
-    #region | TESTS: Error |
-
-    [Fact]
-    public void Error_ShouldReturnViewWithModel()
-    {
-        // Arrange
-        var objUt = BuildObjUt();
-        objUt.ControllerContext = new ControllerContext
-        {
-            HttpContext = new DefaultHttpContext()
-        };
-
-        // Act
-        var result = objUt.Error();
+        var result = objUt.Roll("d20");
 
         // Assert
         var viewResult = result.Should().BeOfType<ViewResult>().Subject;
-        var model = viewResult.Model.Should().BeOfType<ErrorViewModel>().Subject;
-        model.RequestId.Should().NotBeNullOrEmpty();
+        viewResult.Model.Should().Be(viewModel);
+        diceService.Received(1).Roll("d20");
     }
 
     #endregion
 
     #region | Supporting Methods |
 
-    private HomeController BuildObjUt() => new()
+    private NumberController BuildObjUt() => new(diceService)
     {
         TempData = new TempDataDictionary(new DefaultHttpContext(), Substitute.For<ITempDataProvider>())
     };

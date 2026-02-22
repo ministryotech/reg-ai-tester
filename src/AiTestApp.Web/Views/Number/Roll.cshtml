@@ -11,8 +11,8 @@
     </div>
 
     <div class="mt-5">
-        <a asp-action="Roll" asp-route-dieType="@Model.DieType" class="btn btn-danger btn-lg px-5">Roll Again</a>
-        <a asp-action="Dice" class="btn btn-outline-danger btn-lg px-4 ms-2">Select Different Die</a>
+        <a asp-controller="Number" asp-action="Roll" asp-route-dieType="@Model.DieType" class="btn btn-danger btn-lg px-5">Roll Again</a>
+        <a asp-controller="Number" asp-action="Index" class="btn btn-outline-danger btn-lg px-4 ms-2">Select Different Die</a>
         <a asp-controller="Home" asp-action="Index" class="btn btn-outline-secondary btn-lg px-4 ms-2">Back to Home</a>
     </div>
 </div>

@@ -15,8 +15,8 @@
     </div>
 
     <div class="mt-5">
-        <a asp-action="Album" asp-route-genre="@ViewBag.Genre" class="btn btn-primary btn-lg px-4">Pick Another @(ViewBag.Genre ?? "Random") Album</a>
-        <a asp-action="AlbumPrompt" class="btn btn-outline-info btn-lg px-4 ms-2">Select Different Genre</a>
+        <a asp-controller="Music" asp-action="Index" asp-route-genre="@ViewBag.Genre" class="btn btn-primary btn-lg px-4">Pick Another @(ViewBag.Genre ?? "Random") Album</a>
+        <a asp-controller="Music" asp-action="AlbumPrompt" class="btn btn-outline-info btn-lg px-4 ms-2">Select Different Genre</a>
         <a asp-controller="Home" asp-action="Index" class="btn btn-outline-secondary btn-lg px-4 ms-2">Back to Home</a>
     </div>
 </div>

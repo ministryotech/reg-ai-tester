@@ -7,14 +7,14 @@
     <h1 class="display-4 mb-4">Select a Genre</h1>
 
     <div class="mb-5">
-        <a asp-action="Album" class="btn btn-primary btn-lg px-5 py-3">Pick One at Random</a>
+        <a asp-action="Index" class="btn btn-primary btn-lg px-5 py-3">Pick One at Random</a>
     </div>
 
     <div class="row justify-content-center">
         @foreach (var genre in genres)
         {
             <div class="col-md-3 mb-3">
-                <a asp-action="Album" asp-route-genre="@genre" class="btn btn-outline-secondary w-100">@genre</a>
+                <a asp-action="Index" asp-route-genre="@genre" class="btn btn-outline-secondary w-100">@genre</a>
             </div>
         }
     </div>

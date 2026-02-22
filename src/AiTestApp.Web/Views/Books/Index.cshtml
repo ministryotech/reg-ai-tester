@@ -15,8 +15,8 @@
     </div>
 
     <div class="mt-5">
-        <a asp-action="Book" asp-route-genre="@ViewBag.Genre" class="btn btn-primary btn-lg px-4">Pick Another @ViewBag.Genre Book</a>
-        <a asp-action="BookGenre" class="btn btn-outline-info btn-lg px-4 ms-2">Change Genre</a>
+        <a asp-controller="Books" asp-action="Index" asp-route-genre="@ViewBag.Genre" class="btn btn-primary btn-lg px-4">Pick Another @ViewBag.Genre Book</a>
+        <a asp-controller="Books" asp-action="GenreSelection" class="btn btn-outline-info btn-lg px-4 ms-2">Change Genre</a>
         <a asp-controller="Home" asp-action="Index" class="btn btn-outline-secondary btn-lg px-4 ms-2">Back to Home</a>
     </div>
 </div>
