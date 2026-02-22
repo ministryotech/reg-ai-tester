@@ -1,0 +1,37 @@
+[
+  {
+    "Title": "Dune: Part Two",
+    "Description": "Paul Atreides unites with Chani and the Fremen while on a warpath of revenge against the conspirators who destroyed his family.",
+    "PosterUrl": "https://image.tmdb.org/t/p/w500/8b8R8lS8M9vR9m9A8m5N1u8L3O.jpg",
+    "Genre": "Sci-Fi / Adventure",
+    "Year": 2024
+  },
+  {
+    "Title": "Deadpool & Wolverine",
+    "Description": "Wolverine is recovering from his injuries when he crosses paths with the loudmouth, Deadpool. They team up to defeat a common enemy.",
+    "PosterUrl": "https://image.tmdb.org/t/p/w500/8cdWjvZQUmOZp9vTDyZ4mc6Yy1A.jpg",
+    "Genre": "Action / Comedy",
+    "Year": 2024
+  },
+  {
+    "Title": "Inside Out 2",
+    "Description": "Follow Riley, in her teenage years, encountering new emotions.",
+    "PosterUrl": "https://image.tmdb.org/t/p/w500/vpnVM9B6NMmQpWeZvzLv1oYKyCq.jpg",
+    "Genre": "Animation / Family",
+    "Year": 2024
+  },
+  {
+    "Title": "The Beekeeper",
+    "Description": "One man's brutal campaign for vengeance takes on national stakes after he is revealed to be a former operative of a powerful and clandestine organization known as \"Beekeepers\".",
+    "PosterUrl": "https://image.tmdb.org/t/p/w500/A7EUMvGPTZRi0bnF1sVq19pUvSs.jpg",
+    "Genre": "Action / Thriller",
+    "Year": 2024
+  },
+  {
+    "Title": "Gladiator II",
+    "Description": "After his home is conquered by the tyrannical Emperors who now lead Rome, Lucius is forced to enter the Colosseum and must look to his past to find strength to return the glory of Rome to its people.",
+    "PosterUrl": "https://image.tmdb.org/t/p/w500/2cSTv2sTvWBM5Gv97S9Y9R9R9R9.jpg",
+    "Genre": "Action / Drama",
+    "Year": 2024
+  }
+]
