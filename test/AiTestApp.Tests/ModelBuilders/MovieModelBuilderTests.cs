@@ -29,7 +29,7 @@ public sealed class MovieModelBuilderTests
 
     #region | Supporting Methods |
 
-    private MovieModelBuilder BuildObjUt() => new();
+    private static MovieModelBuilder BuildObjUt() => new();
 
     #endregion
 }

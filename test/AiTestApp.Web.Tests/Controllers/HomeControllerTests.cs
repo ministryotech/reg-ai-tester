@@ -18,7 +18,7 @@ public sealed class HomeControllerTests
     public void Index_ShouldReturnView()
     {
         // Arrange
-        var objUt = BuildObjUt();
+        var objUt = BuildObjUt(moviesService);
 
         // Act
         var result = objUt.Index();
@@ -35,7 +35,7 @@ public sealed class HomeControllerTests
     public void Privacy_ShouldReturnView()
     {
         // Arrange
-        var objUt = BuildObjUt();
+        var objUt = BuildObjUt(moviesService);
 
         // Act
         var result = objUt.Privacy();
@@ -52,7 +52,7 @@ public sealed class HomeControllerTests
     public void Movie_ShouldReturnViewWithModelFromService()
     {
         // Arrange
-        var objUt = BuildObjUt();
+        var objUt = BuildObjUt(moviesService);
         var viewModel = new MovieViewModel("Title", "D", "U", "G", 2024);
         moviesService.GetRandomMovie(Arg.Any<string>()).Returns(viewModel);
         objUt.TempData["LastMovieTitle"] = "OldTitle";
@@ -75,7 +75,7 @@ public sealed class HomeControllerTests
     public void Error_ShouldReturnViewWithModel()
     {
         // Arrange
-        var objUt = BuildObjUt();
+        var objUt = BuildObjUt(moviesService);
         objUt.ControllerContext = new ControllerContext
         {
             HttpContext = new DefaultHttpContext()
@@ -94,7 +94,7 @@ public sealed class HomeControllerTests
 
     #region | Supporting Methods |
 
-    private HomeController BuildObjUt() => new(moviesService)
+    private static HomeController BuildObjUt(IMoviesService moviesService) => new(moviesService)
     {
         TempData = new TempDataDictionary(new DefaultHttpContext(), Substitute.For<ITempDataProvider>())
     };

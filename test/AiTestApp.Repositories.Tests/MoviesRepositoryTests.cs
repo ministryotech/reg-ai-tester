@@ -43,7 +43,7 @@ public sealed class MoviesRepositoryTests
 
     #region | Supporting Methods |
 
-    private MoviesRepository BuildObjUt() => new();
+    private static MoviesRepository BuildObjUt() => new();
 
     #endregion
 }
