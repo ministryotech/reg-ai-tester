@@ -3,8 +3,4 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.0" />
   </ItemGroup>
-
-  <ItemGroup>
-    <None Remove="../../data/movies-data.json" />
-  </ItemGroup>
 </Project>
