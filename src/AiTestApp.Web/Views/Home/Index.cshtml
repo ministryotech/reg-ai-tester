@@ -4,8 +4,15 @@
 
 <div class="text-center">
     <h1 class="display-4 fw-bold text-primary-teal">Welcome to the Random Entertainment Generator</h1>
-    <p class="lead text-muted">Feeling bored? Let us help you find something to watch!</p>
+    <p class="lead text-muted">Feeling bored? Let us help you find something interesting!</p>
     <hr class="my-4 border-color">
-    <p class="mb-4">Click the button below to get a random recent movie recommendation.</p>
-    <a class="btn btn-primary btn-lg" asp-area="" asp-controller="Movies" asp-action="Index" role="button">Generate Random Movie</a>
+    <p class="mb-4">Click a button below to get a random recommendation for movies, TV shows, books, albums, or even a die roll!</p>
+
+    <div class="d-flex flex-wrap justify-content-center gap-3">
+        <a class="btn btn-primary btn-lg" asp-area="" asp-controller="Movies" asp-action="Index" role="button">Give me a Movie!</a>
+        <a class="btn btn-secondary btn-lg" asp-area="" asp-controller="TvShows" asp-action="Index" role="button">Give me a TV Show!</a>
+        <a class="btn btn-info btn-lg" asp-area="" asp-controller="Books" asp-action="GenreSelection" role="button">Give me a Book!</a>
+        <a class="btn btn-success btn-lg" asp-area="" asp-controller="Music" asp-action="AlbumPrompt" role="button">Give me an Album!</a>
+        <a class="btn btn-danger btn-lg" asp-area="" asp-controller="Numbers" asp-action="Index" role="button">Roll a Die!</a>
+    </div>
 </div>
