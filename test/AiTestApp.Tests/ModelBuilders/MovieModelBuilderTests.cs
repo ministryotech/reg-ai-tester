@@ -1,5 +1,4 @@
 using AiTestApp.ModelBuilders;
-using AiTestApp.Models;
 using AiTestApp.Repositories.Contracts;
 
 namespace AiTestApp.Tests.ModelBuilders;
