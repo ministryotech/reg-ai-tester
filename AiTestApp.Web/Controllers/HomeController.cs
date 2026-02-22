@@ -21,7 +21,7 @@ public class HomeController(IMoviesService moviesService) : Controller
     /// Displays a page with a randomly selected movie.
     /// </summary>
     /// <remarks>
-    /// Uses <see cref="TempData"/> to avoid returning the same movie twice in a row.
+    /// Uses <see cref="Controller.TempData"/> to avoid returning the same movie twice in a row.
     /// </remarks>
     /// <returns>The movie view populated with a <see cref="MovieViewModel"/>.</returns>
     public IActionResult Movie()
