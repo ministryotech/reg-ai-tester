@@ -4,6 +4,9 @@
   </Folder>
   <Folder Name="/Test/">
     <File Path="test/Directory.Build.props" />
+    <Project Path="test/AiTestApp.Tests/AiTestApp.Tests.csproj" />
+    <Project Path="test/AiTestApp.Repositories.Tests/AiTestApp.Repositories.Tests.csproj" />
+    <Project Path="test/AiTestApp.Web.Tests/AiTestApp.Web.Tests.csproj" />
   </Folder>
   <Project Path="src/AiTestApp/AiTestApp.csproj" />
   <Project Path="src/AiTestApp.Web/AiTestApp.Web.csproj" />
