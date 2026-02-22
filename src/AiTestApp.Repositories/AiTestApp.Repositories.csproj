@@ -5,6 +5,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="movies-data.json" />
+    <None Remove="../../data/movies-data.json" />
   </ItemGroup>
 </Project>

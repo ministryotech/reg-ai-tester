@@ -6,7 +6,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Content Include="..\AiTestApp.Repositories\movies-data.json" Link="movies-data.json">
+      <Content Include="..\..\data\movies-data.json" Link="movies-data.json">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
     </ItemGroup>

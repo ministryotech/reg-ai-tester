@@ -1,4 +1,7 @@
 <Solution>
+  <Folder Name="/Data/">
+    <File Path="data/movies-data.json" />
+  </Folder>
   <Folder Name="/Items/">
     <File Path=".editorconfig" />
     <File Path="Directory.Build.props" />
