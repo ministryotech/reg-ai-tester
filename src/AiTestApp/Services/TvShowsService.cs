@@ -25,7 +25,7 @@ public interface ITvShowsService
 /// <summary>
 /// Service that manages TV show operations.
 /// </summary>
-public class TvShowsService(ITvShowsRepository repository, IViewModelBuilder builder) : ITvShowsService
+public class TvShowsService(ITvShowsRepository repository, ITvShowModelBuilder builder) : ITvShowsService
 {
     /// <inheritdoc />
     public TvShowViewModel GetRandom(string? lastTitle = null)

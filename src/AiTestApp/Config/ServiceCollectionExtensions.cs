@@ -18,7 +18,9 @@ public static class ServiceCollectionExtensions
         public IServiceCollection AddApplicationDependencies() =>
             services.AddScoped<IMoviesService, MoviesService>()
                     .AddScoped<IMovieModelBuilder, MovieModelBuilder>()
-                    .AddScoped<IViewModelBuilder, ViewModelBuilder>()
+                    .AddScoped<ITvShowModelBuilder, TvShowModelBuilder>()
+                    .AddScoped<IBookModelBuilder, BookModelBuilder>()
+                    .AddScoped<IAlbumModelBuilder, AlbumModelBuilder>()
                     .AddScoped<ITvShowsService, TvShowsService>()
                     .AddScoped<IBooksService, BooksService>()
                     .AddScoped<IAlbumsService, AlbumsService>()

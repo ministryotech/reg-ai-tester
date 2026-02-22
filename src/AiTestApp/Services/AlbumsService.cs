@@ -26,7 +26,7 @@ public interface IAlbumsService
 /// <summary>
 /// Service that manages album operations.
 /// </summary>
-public class AlbumsService(IAlbumsRepository repository, IViewModelBuilder builder) : IAlbumsService
+public class AlbumsService(IAlbumsRepository repository, IAlbumModelBuilder builder) : IAlbumsService
 {
     /// <inheritdoc />
     public AlbumViewModel GetRandom(string? genre = null, string? lastTitle = null)

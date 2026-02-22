@@ -12,7 +12,9 @@ public sealed class AdditionalServicesTests
     private readonly ITvShowsRepository tvShowsRepository = Substitute.For<ITvShowsRepository>();
     private readonly IBooksRepository booksRepository = Substitute.For<IBooksRepository>();
     private readonly IAlbumsRepository albumsRepository = Substitute.For<IAlbumsRepository>();
-    private readonly IViewModelBuilder builder = Substitute.For<IViewModelBuilder>();
+    private readonly ITvShowModelBuilder tvShowBuilder = Substitute.For<ITvShowModelBuilder>();
+    private readonly IBookModelBuilder bookBuilder = Substitute.For<IBookModelBuilder>();
+    private readonly IAlbumModelBuilder albumBuilder = Substitute.For<IAlbumModelBuilder>();
 
     #region | TESTS: TvShowsService |
 
@@ -24,7 +26,7 @@ public sealed class AdditionalServicesTests
         var shows = new List<TvShow> { new("Show 1", "D", "U", "G", 2024) };
         tvShowsRepository.GetAll().Returns(shows);
         var viewModel = new TvShowViewModel("Show 1", "D", "U", "G", 2024);
-        builder.Build(shows[0]).Returns(viewModel);
+        tvShowBuilder.Build(shows[0]).Returns(viewModel);
 
         // Act
         var result = objUt.GetRandom();
@@ -44,7 +46,7 @@ public sealed class AdditionalServicesTests
             new("Show 2", "D2", "U2", "G2", 2022)
         };
         tvShowsRepository.GetAll().Returns(shows);
-        builder.Build(Arg.Any<TvShow>()).Returns(callInfo =>
+        tvShowBuilder.Build(Arg.Any<TvShow>()).Returns(callInfo =>
         {
             var s = callInfo.Arg<TvShow>();
             return new TvShowViewModel(s.Title, s.Description, s.PosterUrl, s.Genre, s.Year);
@@ -87,7 +89,7 @@ public sealed class AdditionalServicesTests
         };
         booksRepository.GetAll().Returns(books);
         var viewModel = new BookViewModel("Book 1", "A", "Genre A", "D", 2024);
-        builder.Build(books[0]).Returns(viewModel);
+        bookBuilder.Build(books[0]).Returns(viewModel);
 
         // Act
         var result = objUt.GetRandom("Genre A");
@@ -128,7 +130,7 @@ public sealed class AdditionalServicesTests
         };
         albumsRepository.GetAll().Returns(albums);
         var viewModel = new AlbumViewModel("Album 2", "A", "Genre B", "D", 2024);
-        builder.Build(albums[1]).Returns(viewModel);
+        albumBuilder.Build(albums[1]).Returns(viewModel);
 
         // Act
         var result = objUt.GetRandom("Genre B");
@@ -194,9 +196,9 @@ public sealed class AdditionalServicesTests
 
     #region | Supporting Methods |
 
-    private ITvShowsService BuildTvShowsService() => new TvShowsService(tvShowsRepository, builder);
-    private IBooksService BuildBooksService() => new BooksService(booksRepository, builder);
-    private IAlbumsService BuildAlbumsService() => new AlbumsService(albumsRepository, builder);
+    private ITvShowsService BuildTvShowsService() => new TvShowsService(tvShowsRepository, tvShowBuilder);
+    private IBooksService BuildBooksService() => new BooksService(booksRepository, bookBuilder);
+    private IAlbumsService BuildAlbumsService() => new AlbumsService(albumsRepository, albumBuilder);
     private static IDiceService BuildDiceService() => new DiceService();
 
     #endregion

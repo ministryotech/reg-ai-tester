@@ -26,7 +26,7 @@ public interface IBooksService
 /// <summary>
 /// Service that manages book operations.
 /// </summary>
-public class BooksService(IBooksRepository repository, IViewModelBuilder builder) : IBooksService
+public class BooksService(IBooksRepository repository, IBookModelBuilder builder) : IBooksService
 {
     /// <inheritdoc />
     public BookViewModel GetRandom(string genre, string? lastTitle = null)
