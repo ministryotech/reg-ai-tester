@@ -12,6 +12,11 @@
     <Project Path="test/AiTestApp.Repositories.Tests/AiTestApp.Repositories.Tests.csproj" />
     <Project Path="test/AiTestApp.Web.Tests/AiTestApp.Web.Tests.csproj" />
   </Folder>
+  <Folder Name="/Test/UiTests/">
+    <File Path="test/AiTestApp.Web.UiTests/cypress.config.js" />
+    <File Path="test/AiTestApp.Web.UiTests/package.json" />
+    <File Path="test/AiTestApp.Web.UiTests/cypress/e2e/app.cy.js" />
+  </Folder>
   <Project Path="src/AiTestApp/AiTestApp.csproj" />
   <Project Path="src/AiTestApp.Web/AiTestApp.Web.csproj" />
   <Project Path="src/AiTestApp.Repositories/AiTestApp.Repositories.csproj" />
