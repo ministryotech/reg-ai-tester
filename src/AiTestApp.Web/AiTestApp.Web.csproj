@@ -6,9 +6,14 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Content Include="..\..\data\movies-data.json" Link="movies-data.json">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
+      <None Include="..\..\data\movies-data.json" Link="movies-data.json">
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
+
+    <Target Name="CopyMoviesDataToRoot" AfterTargets="Build">
+      <Copy SourceFiles="../../data/movies-data.json" DestinationFiles="$(ProjectDir)movies-data.json" SkipUnchangedFiles="true" />
+    </Target>
 
 </Project>
