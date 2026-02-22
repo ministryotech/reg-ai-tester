@@ -11,9 +11,9 @@ public sealed class MoviesServiceTests
 {
     private readonly IMoviesRepository moviesRepository = Substitute.For<IMoviesRepository>();
     private readonly IMovieModelBuilder movieModelBuilder = Substitute.For<IMovieModelBuilder>();
-    private readonly MoviesService objUt;
+    private MoviesService objUt = null!;
 
-    public MoviesServiceTests()
+    private void BuildObjUt()
     {
         objUt = new MoviesService(moviesRepository, movieModelBuilder);
     }
@@ -24,6 +24,7 @@ public sealed class MoviesServiceTests
     public void GetRandomMovie_ShouldReturnMovie_WhenRepositoryHasMovies()
     {
         // Arrange
+        BuildObjUt();
         var movies = new List<Movie>
         {
             new("Movie 1", "D1", "U1", "G1", 2021),
@@ -48,6 +49,7 @@ public sealed class MoviesServiceTests
     public void GetRandomMovie_ShouldExcludeLastTitle_WhenPoolIsNotEmpty()
     {
         // Arrange
+        BuildObjUt();
         var movies = new List<Movie>
         {
             new("Movie 1", "D1", "U1", "G1", 2021),
@@ -71,6 +73,7 @@ public sealed class MoviesServiceTests
     public void GetRandomMovie_ShouldReturnAnyMovie_WhenLastTitleIsOnlyOption()
     {
         // Arrange
+        BuildObjUt();
         var movies = new List<Movie>
         {
             new("Movie 1", "D1", "U1", "G1", 2021)
@@ -93,6 +96,7 @@ public sealed class MoviesServiceTests
     public void GetRandomMovie_ShouldThrowException_WhenRepositoryIsEmpty()
     {
         // Arrange
+        BuildObjUt();
         moviesRepository.GetAllMovies().Returns(Enumerable.Empty<Movie>());
 
         // Act

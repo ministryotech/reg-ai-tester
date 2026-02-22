@@ -6,7 +6,12 @@ namespace AiTestApp.Tests.ModelBuilders;
 
 public sealed class MovieModelBuilderTests
 {
-    private readonly MovieModelBuilder objUt = new();
+    private MovieModelBuilder objUt = null!;
+
+    private void BuildObjUt()
+    {
+        objUt = new();
+    }
 
     #region | TESTS: Build |
 
@@ -14,6 +19,7 @@ public sealed class MovieModelBuilderTests
     public void Build_ShouldMapAllPropertiesCorrectly()
     {
         // Arrange
+        BuildObjUt();
         var movie = new Movie("Title", "Description", "Url", "Genre", 2024);
 
         // Act

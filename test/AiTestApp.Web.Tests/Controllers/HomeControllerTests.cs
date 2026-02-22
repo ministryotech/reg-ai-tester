@@ -11,9 +11,9 @@ namespace AiTestApp.Web.Tests.Controllers;
 public sealed class HomeControllerTests
 {
     private readonly IMoviesService moviesService = Substitute.For<IMoviesService>();
-    private readonly HomeController objUt;
+    private HomeController objUt = null!;
 
-    public HomeControllerTests()
+    private void BuildObjUt()
     {
         objUt = new HomeController(moviesService)
         {
@@ -26,6 +26,9 @@ public sealed class HomeControllerTests
     [Fact]
     public void Index_ShouldReturnView()
     {
+        // Arrange
+        BuildObjUt();
+
         // Act
         var result = objUt.Index();
 
@@ -40,6 +43,9 @@ public sealed class HomeControllerTests
     [Fact]
     public void Privacy_ShouldReturnView()
     {
+        // Arrange
+        BuildObjUt();
+
         // Act
         var result = objUt.Privacy();
 
@@ -55,6 +61,7 @@ public sealed class HomeControllerTests
     public void Movie_ShouldReturnViewWithModelFromService()
     {
         // Arrange
+        BuildObjUt();
         var viewModel = new MovieViewModel("Title", "D", "U", "G", 2024);
         moviesService.GetRandomMovie(Arg.Any<string>()).Returns(viewModel);
         objUt.TempData["LastMovieTitle"] = "OldTitle";
@@ -77,6 +84,7 @@ public sealed class HomeControllerTests
     public void Error_ShouldReturnViewWithModel()
     {
         // Arrange
+        BuildObjUt();
         objUt.ControllerContext = new ControllerContext
         {
             HttpContext = new DefaultHttpContext()
