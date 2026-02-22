@@ -32,6 +32,12 @@ public class MoviesService(IMoviesRepository moviesRepository, IMovieModelBuilde
     public MovieViewModel GetRandomMovie(string? lastTitle = null)
     {
         var movies = moviesRepository.GetAllMovies().ToList();
+
+        if (movies.Count == 0)
+        {
+            throw new InvalidOperationException("No movies found in the repository.");
+        }
+
         var random = new Random();
         var pool = string.IsNullOrWhiteSpace(lastTitle)
             ? movies
