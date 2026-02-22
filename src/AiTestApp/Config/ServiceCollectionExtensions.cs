@@ -15,12 +15,8 @@ public static class ServiceCollectionExtensions
         /// Adds application-related dependencies to the specified <see cref="IServiceCollection"/>.
         /// </summary>
         /// <returns>The <see cref="IServiceCollection"/> so that additional calls can be chained.</returns>
-        public IServiceCollection AddApplicationDependencies()
-        {
-            services.AddScoped<IMoviesService, MoviesService>();
-            services.AddScoped<IMovieModelBuilder, MovieModelBuilder>();
-
-            return services;
-        }
+        public IServiceCollection AddApplicationDependencies() =>
+            services.AddScoped<IMoviesService, MoviesService>()
+                    .AddScoped<IMovieModelBuilder, MovieModelBuilder>();
     }
 }
