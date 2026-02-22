@@ -48,6 +48,9 @@ csharp_style_expression_bodied_accessors = true:warning
 csharp_style_expression_bodied_lambdas = true:warning
 csharp_style_expression_bodied_local_functions = true:warning
 
+# Code style: Braces
+csharp_prefer_braces = false:warning
+
 #### Formatting Rules ####
 
 # New line preferences

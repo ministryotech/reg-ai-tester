@@ -34,9 +34,7 @@ public class MoviesService(IMoviesRepository moviesRepository, IMovieModelBuilde
         var movies = moviesRepository.GetAllMovies().ToList();
 
         if (movies.Count == 0)
-        {
             throw new InvalidOperationException("No movies found in the repository.");
-        }
 
         var random = new Random();
         var pool = string.IsNullOrWhiteSpace(lastTitle)
@@ -45,9 +43,7 @@ public class MoviesService(IMoviesRepository moviesRepository, IMovieModelBuilde
 
         // Fallback if the pool is empty (e.g., only one movie in movies)
         if (pool.Count == 0)
-        {
             pool = movies;
-        }
 
         var movie = pool[random.Next(pool.Count)];
         return movieModelBuilder.Build(movie);
