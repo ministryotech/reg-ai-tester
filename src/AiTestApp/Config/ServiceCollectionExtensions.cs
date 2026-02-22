@@ -9,14 +9,7 @@ namespace AiTestApp.Config;
 /// </summary>
 public static class ServiceCollectionExtensions
 {
-    extension (IServiceCollection services)
-    {
-        /// <summary>
-        /// Adds application-related dependencies to the specified <see cref="IServiceCollection"/>.
-        /// </summary>
-        /// <returns>The <see cref="IServiceCollection"/> so that additional calls can be chained.</returns>
-        public IServiceCollection AddApplicationDependencies() =>
-            services.AddScoped<IMoviesService, MoviesService>()
-                    .AddScoped<IMovieModelBuilder, MovieModelBuilder>();
-    }
+    public static IServiceCollection AddApplicationDependencies(this IServiceCollection services) =>
+        services.AddScoped<IMoviesService, MoviesService>()
+                .AddScoped<IMovieModelBuilder, MovieModelBuilder>();
 }
