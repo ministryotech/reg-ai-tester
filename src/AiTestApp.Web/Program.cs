@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Register application services.
 builder.Services.AddControllersWithViews();
 builder.Services.AddApplicationDependencies()
-                .AddRepositoryDependencies(Path.Combine(builder.Environment.ContentRootPath, "test-movies.json"));
+                .AddRepositoryDependencies();
 
 // Build the configured application.
 var app = builder.Build();

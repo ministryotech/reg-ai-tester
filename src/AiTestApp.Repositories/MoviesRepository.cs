@@ -23,7 +23,7 @@ public interface IMoviesRepository
 /// A repository that provides access to movies from a JSON data source.
 /// </summary>
 /// <param name="jsonDataSource">The source of raw JSON movie data.</param>
-public class MoviesRepository(IJsonDataSourceRepository jsonDataSource) : IMoviesRepository
+public class MoviesRepository(IMoviesJsonDataSourceRepository jsonDataSource) : IMoviesRepository
 {
     /// <inheritdoc />
     public IEnumerable<Movie> GetAllMovies()

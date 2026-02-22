@@ -14,10 +14,9 @@ public static class ServiceCollectionExtensions
         /// <summary>
         /// Adds repository-related dependencies to the specified <see cref="IServiceCollection"/>.
         /// </summary>
-        /// <param name="moviesFilePath">The path to the movies JSON file.</param>
         /// <returns>The <see cref="IServiceCollection"/> so that additional calls can be chained.</returns>
-        public IServiceCollection AddRepositoryDependencies(string moviesFilePath) =>
-            services.AddSingleton<IJsonDataSourceRepository>(_ => new JsonDataSourceRepository(moviesFilePath))
+        public IServiceCollection AddRepositoryDependencies() =>
+            services.AddSingleton<IMoviesJsonDataSourceRepository, MoviesJsonDataSourceRepository>()
                     .AddScoped<IMoviesRepository, MoviesRepository>();
     }
 }

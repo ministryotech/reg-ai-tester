@@ -6,7 +6,7 @@ namespace AiTestApp.Repositories.Tests;
 
 public sealed class MoviesRepositoryTests
 {
-    private readonly IJsonDataSourceRepository jsonDataSource = Substitute.For<IJsonDataSourceRepository>();
+    private readonly IMoviesJsonDataSourceRepository jsonDataSource = Substitute.For<IMoviesJsonDataSourceRepository>();
 
     #region | TESTS: GetAllMovies |
 
@@ -31,7 +31,7 @@ public sealed class MoviesRepositoryTests
 
     #region | Supporting Methods |
 
-    private static MoviesRepository BuildObjUt(IJsonDataSourceRepository jsonDataSource) => new(jsonDataSource);
+    private static MoviesRepository BuildObjUt(IMoviesJsonDataSourceRepository jsonDataSource) => new(jsonDataSource);
 
     #endregion
 }
