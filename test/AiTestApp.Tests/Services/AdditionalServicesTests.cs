@@ -1,3 +1,4 @@
+using AiTestApp.Repositories;
 using AiTestApp.ModelBuilders;
 using AiTestApp.Models;
 using AiTestApp.Repositories.Contracts;
