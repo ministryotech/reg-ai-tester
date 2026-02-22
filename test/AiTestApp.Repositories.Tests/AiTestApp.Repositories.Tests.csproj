@@ -4,4 +4,10 @@
     <ProjectReference Include="..\..\src\AiTestApp.Repositories\AiTestApp.Repositories.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Include="..\..\src\AiTestApp.Repositories\movies-data.json" Link="movies-data.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

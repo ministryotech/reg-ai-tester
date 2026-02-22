@@ -12,4 +12,4 @@ public interface IMoviesJsonDataSourceRepository : IJsonDataSourceRepository;
 /// <summary>
 /// A concrete data source repository for movies that uses a hardcoded file path.
 /// </summary>
-public class MoviesJsonDataSourceRepository() : JsonDataSourceRepository("test-movies.json"), IMoviesJsonDataSourceRepository;
+public class MoviesJsonDataSourceRepository() : JsonDataSourceRepository("movies-data.json"), IMoviesJsonDataSourceRepository;

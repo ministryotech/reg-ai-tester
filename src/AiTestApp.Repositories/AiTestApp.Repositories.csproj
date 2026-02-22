@@ -5,8 +5,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="test-movies.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    <None Remove="movies-data.json" />
   </ItemGroup>
 </Project>
