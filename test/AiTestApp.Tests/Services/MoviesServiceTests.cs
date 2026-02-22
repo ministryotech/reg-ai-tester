@@ -12,8 +12,6 @@ public sealed class MoviesServiceTests
     private readonly IMoviesRepository moviesRepository = Substitute.For<IMoviesRepository>();
     private readonly IMovieModelBuilder movieModelBuilder = Substitute.For<IMovieModelBuilder>();
 
-    private MoviesService BuildObjUt() => new(moviesRepository, movieModelBuilder);
-
     #region | TESTS: GetRandomMovie |
 
     [Fact]
@@ -101,6 +99,12 @@ public sealed class MoviesServiceTests
         // Assert
         act.Should().Throw<InvalidOperationException>().WithMessage("No movies found in the repository.");
     }
+
+    #endregion
+
+    #region | Supporting Methods |
+
+    private MoviesService BuildObjUt() => new(moviesRepository, movieModelBuilder);
 
     #endregion
 }

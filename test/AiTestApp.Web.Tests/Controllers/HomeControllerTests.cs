@@ -12,11 +12,6 @@ public sealed class HomeControllerTests
 {
     private readonly IMoviesService moviesService = Substitute.For<IMoviesService>();
 
-    private HomeController BuildObjUt() => new(moviesService)
-    {
-        TempData = new TempDataDictionary(new DefaultHttpContext(), Substitute.For<ITempDataProvider>())
-    };
-
     #region | TESTS: Index |
 
     [Fact]
@@ -94,6 +89,15 @@ public sealed class HomeControllerTests
         var model = viewResult.Model.Should().BeOfType<ErrorViewModel>().Subject;
         model.RequestId.Should().NotBeNullOrEmpty();
     }
+
+    #endregion
+
+    #region | Supporting Methods |
+
+    private HomeController BuildObjUt() => new(moviesService)
+    {
+        TempData = new TempDataDictionary(new DefaultHttpContext(), Substitute.For<ITempDataProvider>())
+    };
 
     #endregion
 }

@@ -5,8 +5,6 @@ namespace AiTestApp.Tests.ModelBuilders;
 
 public sealed class MovieModelBuilderTests
 {
-    private MovieModelBuilder BuildObjUt() => new();
-
     #region | TESTS: Build |
 
     [Fact]
@@ -26,6 +24,12 @@ public sealed class MovieModelBuilderTests
         result.Genre.Should().Be(movie.Genre);
         result.Year.Should().Be(movie.Year);
     }
+
+    #endregion
+
+    #region | Supporting Methods |
+
+    private MovieModelBuilder BuildObjUt() => new();
 
     #endregion
 }

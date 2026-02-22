@@ -5,8 +5,6 @@ namespace AiTestApp.Repositories.Tests;
 
 public sealed class MoviesRepositoryTests
 {
-    private MoviesRepository BuildObjUt() => new();
-
     #region | TESTS: GetAllMovies |
 
     [Fact]
@@ -40,6 +38,12 @@ public sealed class MoviesRepositoryTests
         result.Should().Contain(m => m.Title == "The Beekeeper");
         result.Should().Contain(m => m.Title == "Gladiator II");
     }
+
+    #endregion
+
+    #region | Supporting Methods |
+
+    private MoviesRepository BuildObjUt() => new();
 
     #endregion
 }
