@@ -17,12 +17,12 @@ public sealed class MoviesRepositoryTests
         jsonDataSource.ReadRawJson().Returns(json);
 
         // Act
-        var result = objUt.GetAllMovies().ToList();
+        var result = objUt.GetAllMovies();
 
         // Assert
         result.Should().NotBeNull();
         result.Should().HaveCount(1);
-        result.First().Title.Should().Be("Movie 1");
+        result[0].Title.Should().Be("Movie 1");
     }
 
     #endregion

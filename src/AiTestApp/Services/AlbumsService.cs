@@ -31,11 +31,10 @@ public class AlbumsService(IAlbumsRepository repository, IAlbumModelBuilder buil
     /// <inheritdoc />
     public AlbumViewModel GetRandom(string? genre = null, string? lastTitle = null)
     {
-        var albums = repository.GetAll();
+        var albumList = repository.GetAll();
         if (!string.IsNullOrWhiteSpace(genre))
-            albums = albums.Where(a => a.Genre.Equals(genre, StringComparison.OrdinalIgnoreCase));
+            albumList = albumList.Where(a => a.Genre.Equals(genre, StringComparison.OrdinalIgnoreCase)).ToList();
 
-        var albumList = albums.ToList();
         if (albumList.Count == 0)
             throw new InvalidOperationException("No albums found.");
 

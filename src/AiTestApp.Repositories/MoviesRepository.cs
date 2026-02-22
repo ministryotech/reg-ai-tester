@@ -14,7 +14,7 @@ public interface IMoviesRepository
     /// Retrieves all available movies.
     /// </summary>
     /// <returns>An enumerable collection of all movies.</returns>
-    IEnumerable<Movie> GetAllMovies();
+    IList<Movie> GetAllMovies();
 }
 
 #endregion
@@ -26,6 +26,6 @@ public interface IMoviesRepository
 public class MoviesRepository(IMoviesJsonDataSourceRepository jsonDataSource) : IMoviesRepository
 {
     /// <inheritdoc />
-    public IEnumerable<Movie> GetAllMovies() =>
+    public IList<Movie> GetAllMovies() =>
         JsonSerializer.Deserialize<List<Movie>>(jsonDataSource.ReadRawJson()) ?? [];
 }

@@ -64,7 +64,7 @@ public sealed class AdditionalServicesTests
     {
         // Arrange
         var objUt = BuildTvShowsService();
-        tvShowsRepository.GetAll().Returns(Enumerable.Empty<TvShow>());
+        tvShowsRepository.GetAll().Returns([]);
 
         // Act
         var act = () => objUt.GetRandom();
@@ -145,7 +145,7 @@ public sealed class AdditionalServicesTests
     {
         // Arrange
         var objUt = BuildAlbumsService();
-        albumsRepository.GetAll().Returns(Enumerable.Empty<Album>());
+        albumsRepository.GetAll().Returns([]);
 
         // Act
         var act = () => objUt.GetRandom();

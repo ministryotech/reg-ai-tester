@@ -30,7 +30,7 @@ public class TvShowsService(ITvShowsRepository repository, ITvShowModelBuilder b
     /// <inheritdoc />
     public TvShowViewModel GetRandom(string? lastTitle = null)
     {
-        var shows = repository.GetAll().ToList();
+        var shows = repository.GetAll();
         if (shows.Count == 0)
             throw new InvalidOperationException("No TV shows found.");
 

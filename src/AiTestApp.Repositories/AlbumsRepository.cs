@@ -14,7 +14,7 @@ public interface IAlbumsRepository
     /// Retrieves all available albums.
     /// </summary>
     /// <returns>An enumerable collection of all albums.</returns>
-    IEnumerable<Album> GetAll();
+    IList<Album> GetAll();
 }
 
 #endregion
@@ -26,6 +26,6 @@ public interface IAlbumsRepository
 public class AlbumsRepository(IAlbumsJsonDataSourceRepository jsonDataSource) : IAlbumsRepository
 {
     /// <inheritdoc />
-    public IEnumerable<Album> GetAll() =>
+    public IList<Album> GetAll() =>
         JsonSerializer.Deserialize<List<Album>>(jsonDataSource.ReadRawJson()) ?? [];
 }

@@ -31,7 +31,7 @@ public class MoviesService(IMoviesRepository moviesRepository, IMovieModelBuilde
     /// <inheritdoc />
     public MovieViewModel GetRandomMovie(string? lastTitle = null)
     {
-        var movies = moviesRepository.GetAllMovies().ToList();
+        var movies = moviesRepository.GetAllMovies();
 
         if (movies.Count == 0)
             throw new InvalidOperationException("No movies found in the repository.");

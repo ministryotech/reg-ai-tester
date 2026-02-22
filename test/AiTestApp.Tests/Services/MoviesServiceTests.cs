@@ -91,7 +91,7 @@ public sealed class MoviesServiceTests
     {
         // Arrange
         var objUt = BuildObjUt();
-        moviesRepository.GetAllMovies().Returns(Enumerable.Empty<Movie>());
+        moviesRepository.GetAllMovies().Returns([]);
 
         // Act
         var act = () => objUt.GetRandomMovie();

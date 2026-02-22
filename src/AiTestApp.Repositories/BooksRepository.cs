@@ -14,7 +14,7 @@ public interface IBooksRepository
     /// Retrieves all available books.
     /// </summary>
     /// <returns>An enumerable collection of all books.</returns>
-    IEnumerable<Book> GetAll();
+    IList<Book> GetAll();
 }
 
 #endregion
@@ -26,6 +26,6 @@ public interface IBooksRepository
 public class BooksRepository(IBooksJsonDataSourceRepository jsonDataSource) : IBooksRepository
 {
     /// <inheritdoc />
-    public IEnumerable<Book> GetAll() =>
+    public IList<Book> GetAll() =>
         JsonSerializer.Deserialize<List<Book>>(jsonDataSource.ReadRawJson()) ?? [];
 }

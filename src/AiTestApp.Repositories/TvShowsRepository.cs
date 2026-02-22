@@ -14,7 +14,7 @@ public interface ITvShowsRepository
     /// Retrieves all available TV shows.
     /// </summary>
     /// <returns>An enumerable collection of all TV shows.</returns>
-    IEnumerable<TvShow> GetAll();
+    IList<TvShow> GetAll();
 }
 
 #endregion
@@ -26,6 +26,6 @@ public interface ITvShowsRepository
 public class TvShowsRepository(ITvShowsJsonDataSourceRepository jsonDataSource) : ITvShowsRepository
 {
     /// <inheritdoc />
-    public IEnumerable<TvShow> GetAll() =>
+    public IList<TvShow> GetAll() =>
         JsonSerializer.Deserialize<List<TvShow>>(jsonDataSource.ReadRawJson()) ?? [];
 }
