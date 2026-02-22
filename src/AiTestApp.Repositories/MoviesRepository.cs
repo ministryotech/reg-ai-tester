@@ -26,7 +26,7 @@ public class MoviesRepository : IMoviesRepository
     /// <summary>
     /// A static list of movies used as the data source.
     /// </summary>
-    private static readonly List<Movie> RecentMovies =
+    private static readonly List<Movie> recentMovies =
     [
         new("Dune: Part Two", "Paul Atreides unites with Chani and the Fremen while on a warpath of revenge against the conspirators who destroyed his family.", "https://image.tmdb.org/t/p/w500/8b8R8lS8M9vR9m9A8m5N1u8L3O.jpg", "Sci-Fi / Adventure", 2024),
         new("Deadpool & Wolverine", "Wolverine is recovering from his injuries when he crosses paths with the loudmouth, Deadpool. They team up to defeat a common enemy.", "https://image.tmdb.org/t/p/w500/8cdWjvZQUmOZp9vTDyZ4mc6Yy1A.jpg", "Action / Comedy", 2024),
@@ -36,5 +36,5 @@ public class MoviesRepository : IMoviesRepository
     ];
 
     /// <inheritdoc />
-    public IEnumerable<Movie> GetAllMovies() => RecentMovies;
+    public IEnumerable<Movie> GetAllMovies() => recentMovies;
 }
