@@ -1,5 +1,5 @@
 <Solution>
-  <Project Path="AiTestApp/AiTestApp.csproj" />
-  <Project Path="AiTestApp.Web/AiTestApp.Web.csproj" />
-  <Project Path="AiTestApp.Repositories/AiTestApp.Repositories.csproj" />
+  <Project Path="src/AiTestApp/AiTestApp.csproj" />
+  <Project Path="src/AiTestApp.Web/AiTestApp.Web.csproj" />
+  <Project Path="src/AiTestApp.Repositories/AiTestApp.Repositories.csproj" />
 </Solution>
