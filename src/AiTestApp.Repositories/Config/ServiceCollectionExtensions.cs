@@ -7,6 +7,13 @@ namespace AiTestApp.Repositories.Config;
 /// </summary>
 public static class ServiceCollectionExtensions
 {
-    public static IServiceCollection AddRepositoryDependencies(this IServiceCollection services) =>
-        services.AddScoped<IMoviesRepository, MoviesRepository>();
+    extension (IServiceCollection services)
+    {
+        /// <summary>
+        /// Adds repository-related dependencies to the specified <see cref="IServiceCollection"/>.
+        /// </summary>
+        /// <returns>The <see cref="IServiceCollection"/> so that additional calls can be chained.</returns>
+        public IServiceCollection AddRepositoryDependencies() =>
+            services.AddScoped<IMoviesRepository, MoviesRepository>();
+    }
 }
