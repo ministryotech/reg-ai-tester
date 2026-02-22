@@ -1,6 +1,4 @@
 using Microsoft.Extensions.DependencyInjection;
-using AiTestApp.Repositories.Contracts;
-using AiTestApp.Repositories;
 
 namespace AiTestApp.Repositories.Config;
 

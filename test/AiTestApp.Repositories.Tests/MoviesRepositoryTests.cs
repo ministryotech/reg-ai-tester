@@ -1,5 +1,3 @@
-using AiTestApp.Repositories.Contracts;
-using AiTestApp.Repositories;
 using NSubstitute;
 
 namespace AiTestApp.Repositories.Tests;
