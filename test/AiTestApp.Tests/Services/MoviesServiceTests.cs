@@ -18,7 +18,7 @@ public sealed class MoviesServiceTests
     public void GetRandomMovie_ShouldReturnMovie_WhenRepositoryHasMovies()
     {
         // Arrange
-        var objUt = BuildObjUt(moviesRepository, movieModelBuilder);
+        var objUt = BuildObjUt();
         var movies = new List<Movie>
         {
             new("Movie 1", "D1", "U1", "G1", 2021),
@@ -43,7 +43,7 @@ public sealed class MoviesServiceTests
     public void GetRandomMovie_ShouldExcludeLastTitle_WhenPoolIsNotEmpty()
     {
         // Arrange
-        var objUt = BuildObjUt(moviesRepository, movieModelBuilder);
+        var objUt = BuildObjUt();
         var movies = new List<Movie>
         {
             new("Movie 1", "D1", "U1", "G1", 2021),
@@ -67,7 +67,7 @@ public sealed class MoviesServiceTests
     public void GetRandomMovie_ShouldReturnAnyMovie_WhenLastTitleIsOnlyOption()
     {
         // Arrange
-        var objUt = BuildObjUt(moviesRepository, movieModelBuilder);
+        var objUt = BuildObjUt();
         var movies = new List<Movie>
         {
             new("Movie 1", "D1", "U1", "G1", 2021)
@@ -90,7 +90,7 @@ public sealed class MoviesServiceTests
     public void GetRandomMovie_ShouldThrowException_WhenRepositoryIsEmpty()
     {
         // Arrange
-        var objUt = BuildObjUt(moviesRepository, movieModelBuilder);
+        var objUt = BuildObjUt();
         moviesRepository.GetAllMovies().Returns(Enumerable.Empty<Movie>());
 
         // Act
@@ -104,8 +104,7 @@ public sealed class MoviesServiceTests
 
     #region | Supporting Methods |
 
-    private static MoviesService BuildObjUt(IMoviesRepository moviesRepository, IMovieModelBuilder movieModelBuilder) =>
-        new(moviesRepository, movieModelBuilder);
+    private MoviesService BuildObjUt() => new(moviesRepository, movieModelBuilder);
 
     #endregion
 }
