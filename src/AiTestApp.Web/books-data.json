@@ -1,0 +1,12 @@
+[
+  { "Title": "Dune", "Author": "Frank Herbert", "Genre": "Science Fiction", "Description": "Set in the distant future amidst a feudal interstellar society, the story of Paul Atreides, whose family accepts the stewardship of the planet Arrakis.", "Year": 1965 },
+  { "Title": "The Hobbit", "Author": "J.R.R. Tolkien", "Genre": "Fantasy", "Description": "Bilbo Baggins, a hobbit, is whisked away into a tremendous adventure by Gandalf the wizard and a company of thirteen dwarves.", "Year": 1937 },
+  { "Title": "The Shining", "Author": "Stephen King", "Genre": "Horror", "Description": "A family heads to an isolated hotel for the winter where a sinister presence influences the father into violence.", "Year": 1977 },
+  { "Title": "The Big Sleep", "Author": "Raymond Chandler", "Genre": "Crime", "Description": "Private investigator Philip Marlowe is hired by a wealthy general to handle a case of blackmail involving his younger daughter.", "Year": 1939 },
+  { "Title": "Foundation", "Author": "Isaac Asimov", "Genre": "Science Fiction", "Description": "A mathematician develops a mathematical method to predict the future of a galactic empire and sets up a foundation to preserve knowledge.", "Year": 1951 },
+  { "Title": "The Name of the Wind", "Author": "Patrick Rothfuss", "Genre": "Fantasy", "Description": "The tale of Kvothe, a magically gifted young man who grows to be the most notorious wizard his world has ever seen.", "Year": 2007 },
+  { "Title": "Neuromancer", "Author": "William Gibson", "Genre": "Science Fiction", "Description": "A washed-up computer hacker is hired by a mysterious employer to pull off the ultimate hack.", "Year": 1984 },
+  { "Title": "American Gods", "Author": "Neil Gaiman", "Genre": "Fantasy", "Description": "A recently released ex-con named Shadow meets a mysterious man who seems to know more about his life and past than is possible.", "Year": 2001 },
+  { "Title": "The Haunting of Hill House", "Author": "Shirley Jackson", "Genre": "Horror", "Description": "Four people arrive at a notorious mansion to investigate reports of supernatural activity.", "Year": 1959 },
+  { "Title": "The Girl with the Dragon Tattoo", "Author": "Stieg Larsson", "Genre": "Crime", "Description": "A journalist and a hacker investigate the disappearance of a wealthy businessman's niece.", "Year": 2005 }
+]

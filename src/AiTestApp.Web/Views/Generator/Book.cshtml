@@ -1,0 +1,22 @@
+@model AiTestApp.Models.BookViewModel
+@{
+    ViewData["Title"] = $"Random {ViewBag.Genre} Book";
+}
+
+<div class="text-center">
+    <h1 class="display-4">@Model.Title (@Model.Year)</h1>
+    <p class="lead"><strong>Author:</strong> @Model.Author</p>
+    <p class="lead"><strong>Genre:</strong> @Model.Genre</p>
+
+    <div class="card bg-light mx-auto my-4 shadow-sm" style="max-width: 600px;">
+        <div class="card-body py-5">
+            <p class="card-text fs-5">@Model.Description</p>
+        </div>
+    </div>
+
+    <div class="mt-5">
+        <a asp-action="Book" asp-route-genre="@ViewBag.Genre" class="btn btn-primary btn-lg px-4">Pick Another @ViewBag.Genre Book</a>
+        <a asp-action="BookGenre" class="btn btn-outline-info btn-lg px-4 ms-2">Change Genre</a>
+        <a asp-controller="Home" asp-action="Index" class="btn btn-outline-secondary btn-lg px-4 ms-2">Back to Home</a>
+    </div>
+</div>

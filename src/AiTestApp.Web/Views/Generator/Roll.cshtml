@@ -1,0 +1,18 @@
+@model AiTestApp.Models.NumberViewModel
+@{
+    ViewData["Title"] = "Roll Result";
+}
+
+<div class="text-center">
+    <h1 class="display-4">You rolled a @Model.DieType</h1>
+
+    <div class="my-5">
+        <div class="display-1 fw-bold text-danger">@Model.Result</div>
+    </div>
+
+    <div class="mt-5">
+        <a asp-action="Roll" asp-route-dieType="@Model.DieType" class="btn btn-danger btn-lg px-5">Roll Again</a>
+        <a asp-action="Dice" class="btn btn-outline-danger btn-lg px-4 ms-2">Select Different Die</a>
+        <a asp-controller="Home" asp-action="Index" class="btn btn-outline-secondary btn-lg px-4 ms-2">Back to Home</a>
+    </div>
+</div>

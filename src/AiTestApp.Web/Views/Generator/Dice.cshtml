@@ -1,0 +1,21 @@
+@{
+    ViewData["Title"] = "Roll a Die";
+    var dice = new[] { "d4", "d6", "d8", "d10", "d12", "d20", "d100" };
+}
+
+<div class="text-center">
+    <h1 class="display-4 mb-5">Select a Die to Roll</h1>
+
+    <div class="row justify-content-center">
+        @foreach (var die in dice)
+        {
+            <div class="col-md-3 mb-4">
+                <a asp-action="Roll" asp-route-dieType="@die" class="btn btn-outline-danger btn-lg w-100 py-4 fs-3">@die</a>
+            </div>
+        }
+    </div>
+
+    <div class="mt-5">
+        <a asp-controller="Home" asp-action="Index" class="btn btn-outline-secondary btn-lg px-4">Back to Home</a>
+    </div>
+</div>

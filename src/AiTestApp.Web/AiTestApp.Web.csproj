@@ -10,10 +10,25 @@
         <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
+      <None Include="..\..\data\tv-shows-data.json" Link="tv-shows-data.json">
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Include="..\..\data\books-data.json" Link="books-data.json">
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Include="..\..\data\albums-data.json" Link="albums-data.json">
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 
-    <Target Name="CopyMoviesDataToRoot" AfterTargets="Build">
+    <Target Name="CopyDataToRoot" AfterTargets="Build">
       <Copy SourceFiles="../../data/movies-data.json" DestinationFiles="$(ProjectDir)movies-data.json" SkipUnchangedFiles="true" />
+      <Copy SourceFiles="../../data/tv-shows-data.json" DestinationFiles="$(ProjectDir)tv-shows-data.json" SkipUnchangedFiles="true" />
+      <Copy SourceFiles="../../data/books-data.json" DestinationFiles="$(ProjectDir)books-data.json" SkipUnchangedFiles="true" />
+      <Copy SourceFiles="../../data/albums-data.json" DestinationFiles="$(ProjectDir)albums-data.json" SkipUnchangedFiles="true" />
     </Target>
 
 </Project>

@@ -1,0 +1,22 @@
+@model AiTestApp.Models.AlbumViewModel
+@{
+    ViewData["Title"] = "Random Album";
+}
+
+<div class="text-center">
+    <h1 class="display-4">@Model.Title (@Model.Year)</h1>
+    <p class="lead"><strong>Artist:</strong> @Model.Artist</p>
+    <p class="lead"><strong>Genre:</strong> @Model.Genre</p>
+
+    <div class="card bg-light mx-auto my-4 shadow" style="max-width: 600px;">
+        <div class="card-body">
+            <p class="card-text">@Model.Description</p>
+        </div>
+    </div>
+
+    <div class="mt-5">
+        <a asp-action="Album" asp-route-genre="@ViewBag.Genre" class="btn btn-primary btn-lg px-4">Pick Another @(ViewBag.Genre ?? "Random") Album</a>
+        <a asp-action="AlbumPrompt" class="btn btn-outline-info btn-lg px-4 ms-2">Select Different Genre</a>
+        <a asp-controller="Home" asp-action="Index" class="btn btn-outline-secondary btn-lg px-4 ms-2">Back to Home</a>
+    </div>
+</div>

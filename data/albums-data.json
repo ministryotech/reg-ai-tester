@@ -1,0 +1,12 @@
+[
+  { "Title": "Pet Sounds", "Artist": "The Beach Boys", "Genre": "1960s", "Description": "Pet Sounds is the eleventh studio album by the American rock band the Beach Boys, released on May 16, 1966.", "Year": 1966 },
+  { "Title": "The Dark Side of the Moon", "Artist": "Pink Floyd", "Genre": "Rock", "Description": "The eighth studio album by the English rock band Pink Floyd, released on 1 March 1973.", "Year": 1973 },
+  { "Title": "Thriller", "Artist": "Michael Jackson", "Genre": "Pop", "Description": "The sixth studio album by the American singer Michael Jackson, released on November 30, 1982.", "Year": 1982 },
+  { "Title": "Nevermind", "Artist": "Nirvana", "Genre": "Rock", "Description": "The second studio album by American rock band Nirvana, released on September 24, 1991.", "Year": 1991 },
+  { "Title": "Kid A", "Artist": "Radiohead", "Genre": "2000s", "Description": "The fourth studio album by the English rock band Radiohead, released on 2 October 2000.", "Year": 2000 },
+  { "Title": "Sgt. Pepper's Lonely Hearts Club Band", "Artist": "The Beatles", "Genre": "1960s", "Description": "The eighth studio album by the English rock band the Beatles, released on 26 May 1967.", "Year": 1967 },
+  { "Title": "The Four Seasons", "Artist": "Vivaldi", "Genre": "Classical", "Description": "A group of four violin concerti by Italian composer Antonio Vivaldi, each of which gives musical expression to a season of the year.", "Year": 1725 },
+  { "Title": "Kind of Blue", "Artist": "Miles Davis", "Genre": "Jazz", "Description": "A studio album by American jazz trumpeter Miles Davis, released on August 17, 1959.", "Year": 1959 },
+  { "Title": "Discovery", "Artist": "Daft Punk", "Genre": "Electronica", "Description": "The second studio album by the French electronic music duo Daft Punk, released on 12 March 2001.", "Year": 2001 },
+  { "Title": "Mezzanine", "Artist": "Massive Attack", "Genre": "Chill", "Description": "The third studio album by English electronic music group Massive Attack, released on 20 April 1998.", "Year": 1998 }
+]

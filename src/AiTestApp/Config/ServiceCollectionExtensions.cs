@@ -17,6 +17,11 @@ public static class ServiceCollectionExtensions
         /// <returns>The <see cref="IServiceCollection"/> so that additional calls can be chained.</returns>
         public IServiceCollection AddApplicationDependencies() =>
             services.AddScoped<IMoviesService, MoviesService>()
-                    .AddScoped<IMovieModelBuilder, MovieModelBuilder>();
+                    .AddScoped<IMovieModelBuilder, MovieModelBuilder>()
+                    .AddScoped<IViewModelBuilder, ViewModelBuilder>()
+                    .AddScoped<ITvShowsService, TvShowsService>()
+                    .AddScoped<IBooksService, BooksService>()
+                    .AddScoped<IAlbumsService, AlbumsService>()
+                    .AddScoped<IDiceService, DiceService>();
     }
 }

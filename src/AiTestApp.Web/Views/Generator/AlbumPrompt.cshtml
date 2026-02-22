@@ -1,0 +1,25 @@
+@{
+    ViewData["Title"] = "Select Album Genre";
+    var genres = new[] { "1960s", "1970s", "1980s", "1990s", "2000s", "Pop", "Classical", "Classical Crossover", "Jazz", "Electronica", "Chill", "Drum n Bass", "Trance", "House", "Rock", "Blues", "Hip Hop" };
+}
+
+<div class="text-center">
+    <h1 class="display-4 mb-4">Select a Genre</h1>
+
+    <div class="mb-5">
+        <a asp-action="Album" class="btn btn-primary btn-lg px-5 py-3">Pick One at Random</a>
+    </div>
+
+    <div class="row justify-content-center">
+        @foreach (var genre in genres)
+        {
+            <div class="col-md-3 mb-3">
+                <a asp-action="Album" asp-route-genre="@genre" class="btn btn-outline-secondary w-100">@genre</a>
+            </div>
+        }
+    </div>
+
+    <div class="mt-5">
+        <a asp-controller="Home" asp-action="Index" class="btn btn-outline-secondary">Back to Home</a>
+    </div>
+</div>

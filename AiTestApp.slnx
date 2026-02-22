@@ -1,6 +1,9 @@
 <Solution>
   <Folder Name="/Data/">
     <File Path="data/movies-data.json" />
+    <File Path="data/tv-shows-data.json" />
+    <File Path="data/books-data.json" />
+    <File Path="data/albums-data.json" />
   </Folder>
   <Folder Name="/Items/">
     <File Path=".editorconfig" />
