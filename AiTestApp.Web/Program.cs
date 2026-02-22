@@ -1,14 +1,16 @@
-using AiTestApp.Repositories;
-using AiTestApp.Repositories.Contracts;
+using AiTestApp.Config;
+using AiTestApp.Repositories.Config;
 
 // Create and configure the web application builder.
 var builder = WebApplication.CreateBuilder(args);
 
 // Register application services.
 // - MVC controllers with views
-// - IMoviesRepository backed by MoviesRepository (scoped per request)
 builder.Services.AddControllersWithViews();
-builder.Services.AddScoped<IMoviesRepository, MoviesRepository>();
+
+// Register project-specific dependencies.
+builder.Services.AddApplicationDependencies();
+builder.Services.AddRepositoryDependencies();
 
 // Build the configured application.
 var app = builder.Build();
