@@ -1,5 +1,4 @@
 using Microsoft.Extensions.DependencyInjection;
-using AiTestApp.Repositories.Contracts;
 
 namespace AiTestApp.Repositories.Config;
 
@@ -15,13 +14,13 @@ public static class ServiceCollectionExtensions
         /// </summary>
         /// <returns>The <see cref="IServiceCollection"/> so that additional calls can be chained.</returns>
         public IServiceCollection AddRepositoryDependencies() =>
-            services.AddSingleton<IMoviesJsonDataSourceRepository, MoviesJsonDataSourceRepository>()
-                    .AddSingleton<ITvShowsJsonDataSourceRepository, TvShowsJsonDataSourceRepository>()
-                    .AddSingleton<IBooksJsonDataSourceRepository, BooksJsonDataSourceRepository>()
+            services.AddScoped<IAlbumsRepository, AlbumsRepository>()
                     .AddSingleton<IAlbumsJsonDataSourceRepository, AlbumsJsonDataSourceRepository>()
-                    .AddScoped<IMoviesRepository, MoviesRepository>()
-                    .AddScoped<ITvShowsRepository, TvShowsRepository>()
                     .AddScoped<IBooksRepository, BooksRepository>()
-                    .AddScoped<IAlbumsRepository, AlbumsRepository>();
+                    .AddSingleton<IBooksJsonDataSourceRepository, BooksJsonDataSourceRepository>()
+                    .AddScoped<IMoviesRepository, MoviesRepository>()
+                    .AddSingleton<IMoviesJsonDataSourceRepository, MoviesJsonDataSourceRepository>()
+                    .AddScoped<ITvShowsRepository, TvShowsRepository>()
+                    .AddSingleton<ITvShowsJsonDataSourceRepository, TvShowsJsonDataSourceRepository>();
     }
 }
