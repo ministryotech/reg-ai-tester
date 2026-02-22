@@ -41,6 +41,15 @@ footer {
   background-color: var(--bg-card);
 }
 
+footer a {
+  color: var(--primary-teal) !important;
+}
+
+footer a:hover {
+  color: var(--primary-teal-muted) !important;
+  text-decoration: underline !important;
+}
+
 .form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
   color: var(--text-muted);
   text-align: end;
