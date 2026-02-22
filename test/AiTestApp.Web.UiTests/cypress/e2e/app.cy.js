@@ -12,7 +12,7 @@ describe('Web Application UI Tests', () => {
     cy.get('a.btn-primary').contains('Generate Random Movie').click();
 
     // Check if we are on the movie page
-    cy.url().should('include', '/Home/Movie');
+    cy.url().should('include', '/Movies');
 
     // Check for movie details
     cy.get('h2.card-title').should('be.visible');
@@ -25,7 +25,7 @@ describe('Web Application UI Tests', () => {
   });
 
   it('should be able to pick another random movie', () => {
-    cy.visit('/Home/Movie');
+    cy.visit('/Movies');
 
     cy.get('h2.card-title').then(($title1) => {
       const firstTitle = $title1.text();
