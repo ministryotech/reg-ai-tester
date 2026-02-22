@@ -32,6 +32,44 @@ public sealed class AdditionalServicesTests
         result.Title.Should().Be("Show 1");
     }
 
+    [Fact]
+    public void GetRandomTvShow_ShouldExcludeLastTitle_WhenPoolIsNotEmpty()
+    {
+        // Arrange
+        var objUt = BuildTvShowsService();
+        var shows = new List<TvShow>
+        {
+            new("Show 1", "D1", "U1", "G1", 2021),
+            new("Show 2", "D2", "U2", "G2", 2022)
+        };
+        tvShowsRepository.GetAll().Returns(shows);
+        builder.Build(Arg.Any<TvShow>()).Returns(callInfo =>
+        {
+            var s = callInfo.Arg<TvShow>();
+            return new TvShowViewModel(s.Title, s.Description, s.PosterUrl, s.Genre, s.Year);
+        });
+
+        // Act
+        var result = objUt.GetRandom("Show 1");
+
+        // Assert
+        result.Title.Should().Be("Show 2");
+    }
+
+    [Fact]
+    public void GetRandomTvShow_ShouldThrowException_WhenRepositoryIsEmpty()
+    {
+        // Arrange
+        var objUt = BuildTvShowsService();
+        tvShowsRepository.GetAll().Returns(Enumerable.Empty<TvShow>());
+
+        // Act
+        var act = () => objUt.GetRandom();
+
+        // Assert
+        act.Should().Throw<InvalidOperationException>().WithMessage("No TV shows found.");
+    }
+
     #endregion
 
     #region | TESTS: BooksService |
@@ -56,6 +94,21 @@ public sealed class AdditionalServicesTests
         // Assert
         result.Title.Should().Be("Book 1");
         result.Genre.Should().Be("Genre A");
+    }
+
+    [Fact]
+    public void GetRandomBook_ShouldThrowException_WhenNoBooksInGenre()
+    {
+        // Arrange
+        var objUt = BuildBooksService();
+        var books = new List<Book> { new("Book 1", "A", "Genre A", "D", 2024) };
+        booksRepository.GetAll().Returns(books);
+
+        // Act
+        var act = () => objUt.GetRandom("Genre B");
+
+        // Assert
+        act.Should().Throw<InvalidOperationException>().WithMessage("No books found for genre: Genre B");
     }
 
     #endregion
@@ -84,12 +137,30 @@ public sealed class AdditionalServicesTests
         result.Genre.Should().Be("Genre B");
     }
 
+    [Fact]
+    public void GetRandomAlbum_ShouldThrowException_WhenNoAlbumsFound()
+    {
+        // Arrange
+        var objUt = BuildAlbumsService();
+        albumsRepository.GetAll().Returns(Enumerable.Empty<Album>());
+
+        // Act
+        var act = () => objUt.GetRandom();
+
+        // Assert
+        act.Should().Throw<InvalidOperationException>().WithMessage("No albums found.");
+    }
+
     #endregion
 
     #region | TESTS: DiceService |
 
     [Theory]
     [InlineData("d4", 1, 4)]
+    [InlineData("d6", 1, 6)]
+    [InlineData("d8", 1, 8)]
+    [InlineData("d10", 1, 10)]
+    [InlineData("d12", 1, 12)]
     [InlineData("d20", 1, 20)]
     [InlineData("d100", 1, 100)]
     public void Roll_ShouldReturnNumberInRange(string dieType, int min, int max)
@@ -105,14 +176,27 @@ public sealed class AdditionalServicesTests
         result.Result.Should().BeInRange(min, max);
     }
 
+    [Fact]
+    public void Roll_ShouldThrowException_WhenDieTypeIsInvalid()
+    {
+        // Arrange
+        var objUt = BuildDiceService();
+
+        // Act
+        var act = () => objUt.Roll("d7");
+
+        // Assert
+        act.Should().Throw<ArgumentException>().WithMessage("Invalid die type*");
+    }
+
     #endregion
 
     #region | Supporting Methods |
 
-    private TvShowsService BuildTvShowsService() => new(tvShowsRepository, builder);
-    private BooksService BuildBooksService() => new(booksRepository, builder);
-    private AlbumsService BuildAlbumsService() => new(albumsRepository, builder);
-    private static DiceService BuildDiceService() => new();
+    private ITvShowsService BuildTvShowsService() => new TvShowsService(tvShowsRepository, builder);
+    private IBooksService BuildBooksService() => new BooksService(booksRepository, builder);
+    private IAlbumsService BuildAlbumsService() => new AlbumsService(albumsRepository, builder);
+    private static IDiceService BuildDiceService() => new DiceService();
 
     #endregion
 }

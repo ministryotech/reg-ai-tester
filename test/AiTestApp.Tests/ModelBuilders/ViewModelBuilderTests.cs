@@ -26,6 +26,19 @@ public sealed class ViewModelBuilderTests
         result.Year.Should().Be(show.Year);
     }
 
+    [Fact]
+    public void Build_TvShow_ShouldThrowArgumentNullException_WhenTvShowIsNull()
+    {
+        // Arrange
+        var objUt = BuildObjUt();
+
+        // Act
+        var act = () => objUt.Build((TvShow)null!);
+
+        // Assert
+        act.Should().Throw<ArgumentNullException>().WithParameterName("tvShow");
+    }
+
     #endregion
 
     #region | TESTS: Build Book |
@@ -48,6 +61,19 @@ public sealed class ViewModelBuilderTests
         result.Year.Should().Be(book.Year);
     }
 
+    [Fact]
+    public void Build_Book_ShouldThrowArgumentNullException_WhenBookIsNull()
+    {
+        // Arrange
+        var objUt = BuildObjUt();
+
+        // Act
+        var act = () => objUt.Build((Book)null!);
+
+        // Assert
+        act.Should().Throw<ArgumentNullException>().WithParameterName("book");
+    }
+
     #endregion
 
     #region | TESTS: Build Album |
@@ -68,6 +94,19 @@ public sealed class ViewModelBuilderTests
         result.Genre.Should().Be(album.Genre);
         result.Description.Should().Be(album.Description);
         result.Year.Should().Be(album.Year);
+    }
+
+    [Fact]
+    public void Build_Album_ShouldThrowArgumentNullException_WhenAlbumIsNull()
+    {
+        // Arrange
+        var objUt = BuildObjUt();
+
+        // Act
+        var act = () => objUt.Build((Album)null!);
+
+        // Assert
+        act.Should().Throw<ArgumentNullException>().WithParameterName("album");
     }
 
     #endregion
