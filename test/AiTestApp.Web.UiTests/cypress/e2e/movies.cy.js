@@ -3,11 +3,20 @@ describe('Movies UI Tests', () => {
     cy.visit('/');
   });
 
-  it('should navigate to the random movie page and display movie details', () => {
-    cy.get('a.btn-primary').contains('Generate Random Movie').click();
-
-    // Check if we are on the movie page
+  it('should navigate to movies from the home page', () => {
+    cy.get('a.btn-primary').contains('Give me a Movie!').click();
     cy.url().should('include', '/Movies');
+    cy.get('h2.card-title').should('be.visible');
+  });
+
+  it('should navigate to movies from the navbar', () => {
+    cy.get('.navbar-nav .nav-link').contains('Movies').click();
+    cy.url().should('include', '/Movies');
+    cy.get('h2.card-title').should('be.visible');
+  });
+
+  it('should display movie details correctly', () => {
+    cy.visit('/Movies');
 
     // Check for movie details
     cy.get('h2.card-title').should('be.visible');
