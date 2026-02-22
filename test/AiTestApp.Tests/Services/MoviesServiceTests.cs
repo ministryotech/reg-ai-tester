@@ -7,7 +7,7 @@ using NSubstitute;
 
 namespace AiTestApp.Tests.Services;
 
-public class MoviesServiceTests
+public sealed class MoviesServiceTests
 {
     private readonly IMoviesRepository moviesRepository = Substitute.For<IMoviesRepository>();
     private readonly IMovieModelBuilder movieModelBuilder = Substitute.For<IMovieModelBuilder>();

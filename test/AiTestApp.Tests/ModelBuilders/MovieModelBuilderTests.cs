@@ -4,7 +4,7 @@ using AiTestApp.Repositories.Contracts;
 
 namespace AiTestApp.Tests.ModelBuilders;
 
-public class MovieModelBuilderTests
+public sealed class MovieModelBuilderTests
 {
     private readonly MovieModelBuilder objUt = new();
 

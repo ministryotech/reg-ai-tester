@@ -8,7 +8,7 @@ using NSubstitute;
 
 namespace AiTestApp.Web.Tests.Controllers;
 
-public class HomeControllerTests
+public sealed class HomeControllerTests
 {
     private readonly IMoviesService moviesService = Substitute.For<IMoviesService>();
     private readonly HomeController objUt;

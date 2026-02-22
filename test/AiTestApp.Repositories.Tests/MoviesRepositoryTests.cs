@@ -3,7 +3,7 @@ using AiTestApp.Repositories.Contracts;
 
 namespace AiTestApp.Repositories.Tests;
 
-public class MoviesRepositoryTests
+public sealed class MoviesRepositoryTests
 {
     private readonly MoviesRepository objUt = new();
 
