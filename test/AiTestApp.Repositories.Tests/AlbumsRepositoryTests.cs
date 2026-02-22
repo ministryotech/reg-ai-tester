@@ -14,7 +14,7 @@ public sealed class AlbumsRepositoryTests
     public void GetAll_ShouldReturnItemsFromJson()
     {
         // Arrange
-        var objUt = BuildObjUt(albumsDataSource);
+        var objUt = BuildObjUt();
         var items = new List<Album> { new("Album 1", "A", "G", "D", 2024) };
         albumsDataSource.ReadRawJson().Returns(JsonSerializer.Serialize(items));
 
@@ -30,7 +30,7 @@ public sealed class AlbumsRepositoryTests
 
     #region | Supporting Methods |
 
-    private static AlbumsRepository BuildObjUt(IAlbumsJsonDataSourceRepository albumsDataSource) => new(albumsDataSource);
+    private AlbumsRepository BuildObjUt() => new(albumsDataSource);
 
     #endregion
 }

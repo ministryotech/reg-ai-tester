@@ -14,7 +14,7 @@ public sealed class TvShowsRepositoryTests
     public void GetAll_ShouldReturnItemsFromJson()
     {
         // Arrange
-        var objUt = BuildObjUt(tvShowsDataSource);
+        var objUt = BuildObjUt();
         var items = new List<TvShow> { new("Show 1", "D", "U", "G", 2024) };
         tvShowsDataSource.ReadRawJson().Returns(JsonSerializer.Serialize(items));
 
@@ -30,7 +30,7 @@ public sealed class TvShowsRepositoryTests
 
     #region | Supporting Methods |
 
-    private static TvShowsRepository BuildObjUt(ITvShowsJsonDataSourceRepository tvShowsDataSource) => new(tvShowsDataSource);
+    private TvShowsRepository BuildObjUt() => new(tvShowsDataSource);
 
     #endregion
 }

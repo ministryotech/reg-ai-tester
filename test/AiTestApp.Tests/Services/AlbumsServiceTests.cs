@@ -18,7 +18,7 @@ public sealed class AlbumsServiceTests
     public void GetRandom_ShouldFilterByGenre_WhenGenreProvided()
     {
         // Arrange
-        var objUt = BuildObjUt(albumsRepository, albumBuilder);
+        var objUt = BuildObjUt();
         var albums = new List<Album>
         {
             new("Album 1", "A", "Genre A", "D", 2024),
@@ -40,7 +40,7 @@ public sealed class AlbumsServiceTests
     public void GetRandom_ShouldThrowException_WhenNoAlbumsFound()
     {
         // Arrange
-        var objUt = BuildObjUt(albumsRepository, albumBuilder);
+        var objUt = BuildObjUt();
         albumsRepository.GetAll().Returns([]);
 
         // Act
@@ -54,7 +54,7 @@ public sealed class AlbumsServiceTests
 
     #region | Supporting Methods |
 
-    private static IAlbumsService BuildObjUt(IAlbumsRepository albumsRepository, IAlbumModelBuilder albumBuilder) =>
+    private IAlbumsService BuildObjUt() =>
         new AlbumsService(albumsRepository, albumBuilder);
 
     #endregion

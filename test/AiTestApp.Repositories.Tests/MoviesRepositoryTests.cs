@@ -12,7 +12,7 @@ public sealed class MoviesRepositoryTests
     public void GetAllMovies_ShouldReturnMoviesFromJson()
     {
         // Arrange
-        var objUt = BuildObjUt(jsonDataSource);
+        var objUt = BuildObjUt();
         var json = "[{\"Title\": \"Movie 1\", \"Description\": \"D1\", \"PosterUrl\": \"U1\", \"Genre\": \"G1\", \"Year\": 2021}]";
         jsonDataSource.ReadRawJson().Returns(json);
 
@@ -29,7 +29,7 @@ public sealed class MoviesRepositoryTests
 
     #region | Supporting Methods |
 
-    private static MoviesRepository BuildObjUt(IMoviesJsonDataSourceRepository jsonDataSource) => new(jsonDataSource);
+    private MoviesRepository BuildObjUt() => new(jsonDataSource);
 
     #endregion
 }

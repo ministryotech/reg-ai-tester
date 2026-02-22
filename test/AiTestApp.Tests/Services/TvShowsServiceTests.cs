@@ -18,7 +18,7 @@ public sealed class TvShowsServiceTests
     public void GetRandom_ShouldReturnShow()
     {
         // Arrange
-        var objUt = BuildObjUt(tvShowsRepository, tvShowBuilder);
+        var objUt = BuildObjUt();
         var shows = new List<TvShow> { new("Show 1", "D", "U", "G", 2024) };
         tvShowsRepository.GetAll().Returns(shows);
         var viewModel = new TvShowViewModel("Show 1", "D", "U", "G", 2024);
@@ -35,7 +35,7 @@ public sealed class TvShowsServiceTests
     public void GetRandom_ShouldExcludeLastTitle_WhenPoolIsNotEmpty()
     {
         // Arrange
-        var objUt = BuildObjUt(tvShowsRepository, tvShowBuilder);
+        var objUt = BuildObjUt();
         var shows = new List<TvShow>
         {
             new("Show 1", "D1", "U1", "G1", 2021),
@@ -59,7 +59,7 @@ public sealed class TvShowsServiceTests
     public void GetRandom_ShouldThrowException_WhenRepositoryIsEmpty()
     {
         // Arrange
-        var objUt = BuildObjUt(tvShowsRepository, tvShowBuilder);
+        var objUt = BuildObjUt();
         tvShowsRepository.GetAll().Returns([]);
 
         // Act
@@ -73,7 +73,7 @@ public sealed class TvShowsServiceTests
 
     #region | Supporting Methods |
 
-    private static ITvShowsService BuildObjUt(ITvShowsRepository tvShowsRepository, ITvShowModelBuilder tvShowBuilder) =>
+    private ITvShowsService BuildObjUt() =>
         new TvShowsService(tvShowsRepository, tvShowBuilder);
 
     #endregion

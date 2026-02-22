@@ -18,7 +18,7 @@ public sealed class BooksServiceTests
     public void GetRandom_ShouldReturnBookOfGenre()
     {
         // Arrange
-        var objUt = BuildObjUt(booksRepository, bookBuilder);
+        var objUt = BuildObjUt();
         var books = new List<Book>
         {
             new("Book 1", "A", "Genre A", "D", 2024),
@@ -40,7 +40,7 @@ public sealed class BooksServiceTests
     public void GetRandom_ShouldThrowException_WhenNoBooksInGenre()
     {
         // Arrange
-        var objUt = BuildObjUt(booksRepository, bookBuilder);
+        var objUt = BuildObjUt();
         var books = new List<Book> { new("Book 1", "A", "Genre A", "D", 2024) };
         booksRepository.GetAll().Returns(books);
 
@@ -55,7 +55,7 @@ public sealed class BooksServiceTests
 
     #region | Supporting Methods |
 
-    private static IBooksService BuildObjUt(IBooksRepository booksRepository, IBookModelBuilder bookBuilder) =>
+    private IBooksService BuildObjUt() =>
         new BooksService(booksRepository, bookBuilder);
 
     #endregion
