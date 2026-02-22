@@ -6,7 +6,7 @@ namespace AiTestApp.Web.Controllers;
 /// <summary>
 /// Controller for number/dice generation.
 /// </summary>
-public class NumberController(IDiceService diceService) : Controller
+public class NumbersController(IDiceService diceService) : Controller
 {
     /// <summary>
     /// Displays a page to select a die type.

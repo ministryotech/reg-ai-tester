@@ -8,7 +8,7 @@ using NSubstitute;
 
 namespace AiTestApp.Web.Tests.Controllers;
 
-public sealed class NumberControllerTests
+public sealed class NumbersControllerTests
 {
     private readonly IDiceService diceService = Substitute.For<IDiceService>();
 
@@ -52,7 +52,7 @@ public sealed class NumberControllerTests
 
     #region | Supporting Methods |
 
-    private NumberController BuildObjUt() => new(diceService)
+    private NumbersController BuildObjUt() => new(diceService)
     {
         TempData = new TempDataDictionary(new DefaultHttpContext(), Substitute.For<ITempDataProvider>())
     };

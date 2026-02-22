@@ -23,7 +23,7 @@
     <File Path="test/AiTestApp.Web.UiTests/cypress/e2e/tvshows.cy.js" />
     <File Path="test/AiTestApp.Web.UiTests/cypress/e2e/books.cy.js" />
     <File Path="test/AiTestApp.Web.UiTests/cypress/e2e/music.cy.js" />
-    <File Path="test/AiTestApp.Web.UiTests/cypress/e2e/number.cy.js" />
+    <File Path="test/AiTestApp.Web.UiTests/cypress/e2e/numbers.cy.js" />
   </Folder>
   <Project Path="src/AiTestApp/AiTestApp.csproj" />
   <Project Path="src/AiTestApp.Web/AiTestApp.Web.csproj" />
