@@ -5,12 +5,7 @@ namespace AiTestApp.Repositories.Tests;
 
 public sealed class MoviesRepositoryTests
 {
-    private MoviesRepository objUt = null!;
-
-    private void BuildObjUt()
-    {
-        objUt = new();
-    }
+    private MoviesRepository BuildObjUt() => new();
 
     #region | TESTS: GetAllMovies |
 
@@ -18,7 +13,7 @@ public sealed class MoviesRepositoryTests
     public void GetAllMovies_ShouldReturnNonEmptyListOfMovies()
     {
         // Arrange
-        BuildObjUt();
+        var objUt = BuildObjUt();
 
         // Act
         var result = objUt.GetAllMovies();
@@ -33,7 +28,7 @@ public sealed class MoviesRepositoryTests
     public void GetAllMovies_ShouldContainExpectedMovies()
     {
         // Arrange
-        BuildObjUt();
+        var objUt = BuildObjUt();
 
         // Act
         var result = objUt.GetAllMovies().ToList();

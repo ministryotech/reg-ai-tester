@@ -11,12 +11,8 @@ public sealed class MoviesServiceTests
 {
     private readonly IMoviesRepository moviesRepository = Substitute.For<IMoviesRepository>();
     private readonly IMovieModelBuilder movieModelBuilder = Substitute.For<IMovieModelBuilder>();
-    private MoviesService objUt = null!;
 
-    private void BuildObjUt()
-    {
-        objUt = new MoviesService(moviesRepository, movieModelBuilder);
-    }
+    private MoviesService BuildObjUt() => new(moviesRepository, movieModelBuilder);
 
     #region | TESTS: GetRandomMovie |
 
@@ -24,14 +20,14 @@ public sealed class MoviesServiceTests
     public void GetRandomMovie_ShouldReturnMovie_WhenRepositoryHasMovies()
     {
         // Arrange
-        BuildObjUt();
+        var objUt = BuildObjUt();
         var movies = new List<Movie>
         {
             new("Movie 1", "D1", "U1", "G1", 2021),
             new("Movie 2", "D2", "U2", "G2", 2022)
         };
         moviesRepository.GetAllMovies().Returns(movies);
-        movieModelBuilder.Build(Arg.Any<Movie>()).Returns(callInfo => 
+        movieModelBuilder.Build(Arg.Any<Movie>()).Returns(callInfo =>
         {
             var m = callInfo.Arg<Movie>();
             return new MovieViewModel(m.Title, m.Description, m.PosterUrl, m.Genre, m.Year);
@@ -49,14 +45,14 @@ public sealed class MoviesServiceTests
     public void GetRandomMovie_ShouldExcludeLastTitle_WhenPoolIsNotEmpty()
     {
         // Arrange
-        BuildObjUt();
+        var objUt = BuildObjUt();
         var movies = new List<Movie>
         {
             new("Movie 1", "D1", "U1", "G1", 2021),
             new("Movie 2", "D2", "U2", "G2", 2022)
         };
         moviesRepository.GetAllMovies().Returns(movies);
-        movieModelBuilder.Build(Arg.Any<Movie>()).Returns(callInfo => 
+        movieModelBuilder.Build(Arg.Any<Movie>()).Returns(callInfo =>
         {
             var m = callInfo.Arg<Movie>();
             return new MovieViewModel(m.Title, m.Description, m.PosterUrl, m.Genre, m.Year);
@@ -73,13 +69,13 @@ public sealed class MoviesServiceTests
     public void GetRandomMovie_ShouldReturnAnyMovie_WhenLastTitleIsOnlyOption()
     {
         // Arrange
-        BuildObjUt();
+        var objUt = BuildObjUt();
         var movies = new List<Movie>
         {
             new("Movie 1", "D1", "U1", "G1", 2021)
         };
         moviesRepository.GetAllMovies().Returns(movies);
-        movieModelBuilder.Build(Arg.Any<Movie>()).Returns(callInfo => 
+        movieModelBuilder.Build(Arg.Any<Movie>()).Returns(callInfo =>
         {
             var m = callInfo.Arg<Movie>();
             return new MovieViewModel(m.Title, m.Description, m.PosterUrl, m.Genre, m.Year);
@@ -96,7 +92,7 @@ public sealed class MoviesServiceTests
     public void GetRandomMovie_ShouldThrowException_WhenRepositoryIsEmpty()
     {
         // Arrange
-        BuildObjUt();
+        var objUt = BuildObjUt();
         moviesRepository.GetAllMovies().Returns(Enumerable.Empty<Movie>());
 
         // Act

@@ -11,15 +11,11 @@ namespace AiTestApp.Web.Tests.Controllers;
 public sealed class HomeControllerTests
 {
     private readonly IMoviesService moviesService = Substitute.For<IMoviesService>();
-    private HomeController objUt = null!;
 
-    private void BuildObjUt()
+    private HomeController BuildObjUt() => new(moviesService)
     {
-        objUt = new HomeController(moviesService)
-        {
-            TempData = new TempDataDictionary(new DefaultHttpContext(), Substitute.For<ITempDataProvider>())
-        };
-    }
+        TempData = new TempDataDictionary(new DefaultHttpContext(), Substitute.For<ITempDataProvider>())
+    };
 
     #region | TESTS: Index |
 
@@ -27,7 +23,7 @@ public sealed class HomeControllerTests
     public void Index_ShouldReturnView()
     {
         // Arrange
-        BuildObjUt();
+        var objUt = BuildObjUt();
 
         // Act
         var result = objUt.Index();
@@ -44,7 +40,7 @@ public sealed class HomeControllerTests
     public void Privacy_ShouldReturnView()
     {
         // Arrange
-        BuildObjUt();
+        var objUt = BuildObjUt();
 
         // Act
         var result = objUt.Privacy();
@@ -61,7 +57,7 @@ public sealed class HomeControllerTests
     public void Movie_ShouldReturnViewWithModelFromService()
     {
         // Arrange
-        BuildObjUt();
+        var objUt = BuildObjUt();
         var viewModel = new MovieViewModel("Title", "D", "U", "G", 2024);
         moviesService.GetRandomMovie(Arg.Any<string>()).Returns(viewModel);
         objUt.TempData["LastMovieTitle"] = "OldTitle";
@@ -84,7 +80,7 @@ public sealed class HomeControllerTests
     public void Error_ShouldReturnViewWithModel()
     {
         // Arrange
-        BuildObjUt();
+        var objUt = BuildObjUt();
         objUt.ControllerContext = new ControllerContext
         {
             HttpContext = new DefaultHttpContext()
