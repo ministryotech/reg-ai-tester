@@ -25,6 +25,19 @@ public sealed class MovieModelBuilderTests
         result.Year.Should().Be(movie.Year);
     }
 
+    [Fact]
+    public void Build_ShouldThrowArgumentNullException_WhenMovieIsNull()
+    {
+        // Arrange
+        var objUt = BuildObjUt();
+
+        // Act
+        var act = () => objUt.Build(null!);
+
+        // Assert
+        act.Should().Throw<ArgumentNullException>().WithParameterName("movie");
+    }
+
     #endregion
 
     #region | Supporting Methods |

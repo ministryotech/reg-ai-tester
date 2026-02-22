@@ -26,5 +26,9 @@ public interface IMovieModelBuilder
 public class MovieModelBuilder : IMovieModelBuilder
 {
     /// <inheritdoc />
-    public MovieViewModel Build(Movie movie) => new(movie.Title, movie.Description, movie.PosterUrl, movie.Genre, movie.Year);
+    public MovieViewModel Build(Movie movie)
+    {
+        ArgumentNullException.ThrowIfNull(movie);
+        return new(movie.Title, movie.Description, movie.PosterUrl, movie.Genre, movie.Year);
+    }
 }
