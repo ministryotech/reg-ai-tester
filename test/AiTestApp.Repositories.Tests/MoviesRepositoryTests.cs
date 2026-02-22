@@ -16,7 +16,7 @@ public sealed class MoviesRepositoryTests
         var objUt = BuildObjUt();
 
         // Act
-        var result = objUt.GetAllMovies();
+        var result = objUt.GetAllMovies().ToList();
 
         // Assert
         result.Should().NotBeNull();
